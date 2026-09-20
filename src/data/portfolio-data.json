@@ -1,0 +1,312 @@
+{
+  "profile": {
+    "fullName": "Phạm Minh Tuấn",
+    "accentTitle": "The Wolf's Journey • Software & Web Developer",
+    "conciseBio": "Lập trình viên Web tập trung vào kiến trúc Laravel Service, Next.js và Supabase. Có kinh nghiệm thực tế xây dựng REST API, xử lý upload media qua Cloudflare R2 với Signed URLs, tích hợp Gemini AI và hệ thống thời gian thực với Laravel Reverb.",
+    "coreSkills": [
+      "PHP & Laravel",
+      "Next.js & React",
+      "MySQL & PostgreSQL",
+      "Supabase",
+      "Cloudflare R2",
+      "Gemini API",
+      "Laravel Reverb",
+      "REST API & Layered Architecture"
+    ],
+    "avatarUrl": "/images/avatar.jpg",
+    "contact": {
+      "phone": "+84 795 222 148",
+      "email": "tuans2k6@gmail.com",
+      "location": "Quảng Ninh, Việt Nam",
+      "birthDate": "21 / 06 / 2006",
+      "github": "https://github.com/MinkTuans",
+      "githubUsername": "MinkTuans"
+    }
+  },
+  "skillCategories": [
+    {
+      "id": "frontend",
+      "title": "Frontend & UI Engineering",
+      "description": "Xây dựng giao diện responsive, tối ưu trải nghiệm người dùng và tích hợp API mượt mà.",
+      "skills": [
+        { "id": "f-1", "name": "HTML, CSS, JavaScript", "category": "Frontend", "roleOrContext": "Nền tảng cốt lõi cho mọi dự án web", "isCore": true },
+        { "id": "f-2", "name": "React & Next.js", "category": "Frontend", "roleOrContext": "Xây dựng UI cho MindNova AI và AI Cooking", "isCore": true },
+        { "id": "f-3", "name": "Tailwind CSS", "category": "Frontend", "roleOrContext": "Styling hiện đại, responsive cao cấp trong MindNova AI", "isCore": true },
+        { "id": "f-4", "name": "Bootstrap", "category": "Frontend", "roleOrContext": "Dàn trang linh hoạt trong các dự án web quản trị", "isCore": false },
+        { "id": "f-5", "name": "Responsive Web Design", "category": "Frontend", "roleOrContext": "Tương thích hoàn hảo mọi kích cỡ màn hình từ mobile tới desktop", "isCore": true }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend & System Architecture",
+      "description": "Thiết kế kiến trúc hệ thống, xây dựng REST API chuẩn mực và xử lý nghiệp vụ phức tạp.",
+      "skills": [
+        { "id": "b-1", "name": "PHP & Laravel", "category": "Backend", "roleOrContext": "Service Architecture trong MindNova AI & dự án thực tế", "isCore": true },
+        { "id": "b-2", "name": "Node.js", "category": "Backend", "roleOrContext": "Xây dựng backend cho dự án AI Cooking", "isCore": true },
+        { "id": "b-3", "name": "C#", "category": "Backend", "roleOrContext": "Lập trình hướng đối tượng OOP và logic xử lý", "isCore": false },
+        { "id": "b-4", "name": "REST API", "category": "Backend", "roleOrContext": "Thiết kế và triển khai API cho toàn bộ các dự án", "isCore": true },
+        { "id": "b-5", "name": "MVC Architecture", "category": "Backend", "roleOrContext": "Kiến trúc chuẩn cho các ứng dụng web", "isCore": true },
+        { "id": "b-6", "name": "Layered Architecture", "category": "Backend", "roleOrContext": "Tách biệt rõ ràng các tầng nghiệp vụ trong AI Cooking", "isCore": true },
+        { "id": "b-7", "name": "Object-Oriented Programming (OOP)", "category": "Backend", "roleOrContext": "Nguyên lý thiết kế code có cấu trúc, dễ mở rộng", "isCore": true }
+      ]
+    },
+    {
+      "id": "database-cloud",
+      "title": "Databases & Cloud Storage",
+      "description": "Mô hình hóa dữ liệu quan hệ, thiết kế bảng dữ liệu tối ưu và lưu trữ đám mây an toàn.",
+      "skills": [
+        { "id": "d-1", "name": "MySQL", "category": "Database & Cloud", "roleOrContext": "Quản lý dữ liệu đơn hàng, khoá học và quản trị tour", "isCore": true },
+        { "id": "d-2", "name": "PostgreSQL & Supabase", "category": "Database & Cloud", "roleOrContext": "Thiết kế schema và cơ sở dữ liệu cho AI Cooking", "isCore": true },
+        { "id": "d-3", "name": "Cloudflare R2", "category": "Database & Cloud", "roleOrContext": "Lưu trữ video/media bài học bằng Signed URLs bảo mật", "isCore": true }
+      ]
+    },
+    {
+      "id": "realtime-tools",
+      "title": "Realtime, WebSocket & Dev Tools",
+      "description": "Giao tiếp hai chiều tức thì, kiểm thử API và quản lý mã nguồn chuyên nghiệp.",
+      "skills": [
+        { "id": "t-1", "name": "Laravel Reverb / Echo", "category": "Realtime & Tools", "roleOrContext": "Realtime chat và in-app notifications cho MindNova AI", "isCore": true },
+        { "id": "t-2", "name": "Git & GitHub", "category": "Realtime & Tools", "roleOrContext": "Quản lý phiên bản mã nguồn, làm việc nhóm và PR review", "isCore": true },
+        { "id": "t-3", "name": "Postman", "category": "Realtime & Tools", "roleOrContext": "Kiểm thử, tự động hóa và tài liệu hóa REST API", "isCore": true }
+      ]
+    },
+    {
+      "id": "ai-integration",
+      "title": "AI Integration & Assisted Development",
+      "description": "Tích hợp mô hình ngôn ngữ lớn (LLM) vào sản phẩm thực tế và ứng dụng AI gia tốc phát triển.",
+      "skills": [
+        { "id": "a-1", "name": "Gemini API (OpenAI Backup)", "category": "AI", "roleOrContext": "Tự động tạo outline khoá học và quiz trắc nghiệm trong MindNova AI", "isCore": true },
+        { "id": "a-2", "name": "AI-Assisted Dev: Claude, Codex, Gemini, Grok", "category": "AI", "roleOrContext": "Nâng cao năng suất lập trình, tối ưu thuật toán và gỡ lỗi", "isCore": true }
+      ]
+    },
+    {
+      "id": "practices",
+      "title": "Engineering Practices & Communication",
+      "description": "Tác phong kỹ thuật vững chắc và tinh thần hợp tác hiệu quả trong nhóm.",
+      "skills": [
+        { "id": "p-1", "name": "Debugging & Troubleshooting", "category": "Practices", "roleOrContext": "Phân tích và khắc phục lỗi hệ thống, tối ưu hiệu năng", "isCore": true },
+        { "id": "p-2", "name": "Teamwork & Communication", "category": "Practices", "roleOrContext": "Điều phối và phối hợp nhịp nhàng trong các nhóm 2-5 thành viên", "isCore": true },
+        { "id": "p-3", "name": "Adaptability & Self-Learning", "category": "Practices", "roleOrContext": "Nhanh chóng làm chủ công nghệ mới theo yêu cầu dự án", "isCore": true },
+        { "id": "p-4", "name": "English (Basic)", "category": "Practices", "roleOrContext": "Đọc hiểu tài liệu kỹ thuật chuyên ngành và API specs", "isCore": false }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "mindnova-ai",
+      "slug": "mindnova-ai",
+      "name": "MindNova AI",
+      "projectType": "Group Project – 5 Members",
+      "timeframe": "05/2026 - Hiện tại",
+      "tagline": "Nền tảng E-Learning tích hợp gia sư AI dành cho học viên và hệ thống xuất bản bài giảng cho giảng viên.",
+      "role": "Instructor Feature Developer",
+      "overview": "MindNova AI là một nền tảng học tập trực tuyến thông minh, nơi sinh viên có thể đăng ký, mua và học các khoá học với sự trợ giúp trực tiếp từ AI Tutor 24/7. Đồng thời, nền tảng cung cấp cho giảng viên một không gian chuyên nghiệp để thiết kế giáo trình, tải lên video bài giảng bảo mật, theo dõi dòng tiền và tương tác trực tiếp với người học.",
+      "whatIWorkedOn": "Tập trung xây dựng toàn bộ hạ tầng Backend và dịch vụ cho phân hệ Giảng viên (Instructor): từ hệ thống API quản lý bài học, cơ chế tải video bảo mật qua Cloudflare R2, tích hợp LLM (Gemini/OpenAI) tự động hoá nội dung, đến xử lý phân tích doanh thu thanh toán VNPay/MoMo và truyền thông điệp thời gian thực (realtime chat & notifications).",
+      "technologies": [
+        "PHP",
+        "Laravel (Service Architecture)",
+        "MySQL",
+        "REST API",
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Cloudflare R2",
+        "Gemini API",
+        "Laravel Reverb",
+        "GitHub"
+      ],
+      "keyFeatures": [
+        "Hệ thống quản lý khoá học, chương học, bài giảng và ngân hàng trắc nghiệm",
+        "Cơ chế upload media bài giảng an toàn qua Cloudflare R2 với Signed URLs",
+        "AI Generator: Tự động sinh đề cương chi tiết và câu hỏi quiz từ nội dung bài giảng",
+        "Bảng điều khiển tài chính giảng viên: theo dõi doanh thu, mã giảm giá, lệnh rút tiền và chỉ số người học dựa trên đơn hàng VNPay/MoMo",
+        "Chatroom khoá học và hệ thống chuông thông báo in-app thời gian thực (WebSocket)"
+      ],
+      "myContribution": [
+        "Xây dựng toàn bộ hệ thống REST API phục vụ phân hệ giảng viên (khoá học, module, bài học, quiz) tuân thủ kiến trúc Laravel Service và tối ưu cơ sở dữ liệu MySQL.",
+        "Thiết lập giải pháp lưu trữ video/media bài giảng trên Cloudflare R2 bằng Signed URLs có thời hạn bảo mật, không dùng lưu trữ cục bộ hay S3 làm nơi lưu trữ chính.",
+        "Tích hợp Gemini API (sử dụng OpenAI làm cơ chế backup dự phòng) để tự động phân tích bài học, sinh đề cương và tạo bài tập trắc nghiệm.",
+        "Phát triển module phân tích doanh thu giảng viên, áp dụng coupon giảm giá, lệnh rút tiền và báo cáo sinh viên dựa trên luồng thanh toán VNPay và MoMo.",
+        "Xây dựng tính năng chat khoá học trực tuyến và thông báo ứng dụng thời gian thực sử dụng Laravel Reverb và Laravel Echo."
+      ],
+      "resultAndStatus": "Dự án đang trong giai đoạn phát triển và tích hợp hoạt động liên tục (05/2026 - NOW). Các module API giảng viên, lưu trữ Cloudflare R2 và realtime chat đã vận hành ổn định.",
+      "githubUrl": "https://github.com/MinkTuans",
+      "architectureNotes": [
+        "Tách biệt hoàn toàn tầng Controller, Service và Repository để đảm bảo tính module hóa và dễ kiểm thử.",
+        "Áp dụng Signed URLs giúp giảm tải băng thông server và bảo vệ bản quyền tài nguyên video của giảng viên."
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "ai-cooking",
+      "slug": "ai-cooking",
+      "name": "AI Cooking",
+      "projectType": "Group Project – 2 Members",
+      "timeframe": "04/2026 - 07/2026",
+      "tagline": "Nền tảng hỗ trợ người dùng tìm kiếm món ăn, gợi ý công thức nấu nướng từ nguyên liệu sẵn có và quản lý kế hoạch bữa ăn.",
+      "role": "Backend Development & Database Design",
+      "overview": "AI Cooking giải quyết bài toán quen thuộc trong cuộc sống thường ngày: 'Hôm nay ăn gì với những gì đang có trong tủ lạnh?'. Ứng dụng giúp người dùng nhập danh sách nguyên liệu hiện có để nhận gợi ý công thức món ăn phù hợp, đồng thời hỗ trợ lên lịch thực đơn cá nhân hóa.",
+      "whatIWorkedOn": "Chịu trách nhiệm thiết kế toàn bộ cấu trúc cơ sở dữ liệu trên Supabase (PostgreSQL), xây dựng khung backend theo kiến trúc phân tầng (Layered Architecture), tích hợp API Spoonacular và triển khai hệ thống xác thực Google OAuth an toàn.",
+      "technologies": [
+        "PostgreSQL",
+        "ReactJs",
+        "Node.js",
+        "Supabase",
+        "Layered Architecture",
+        "GitHub"
+      ],
+      "keyFeatures": [
+        "Gợi ý công thức món ăn thông minh dựa trên nguyên liệu người dùng nhập",
+        "Đăng nhập nhanh chóng và bảo mật qua Google Authentication",
+        "Quản lý kế hoạch bữa ăn và công thức cá nhân hóa theo từng tài khoản",
+        "Tích hợp dữ liệu ẩm thực phong phú từ Spoonacular APIs"
+      ],
+      "myContribution": [
+        "Thiết kế cấu trúc cơ sở dữ liệu quan hệ hoàn chỉnh trên Supabase (PostgreSQL), tối ưu hóa các bảng lưu trữ người dùng, nguyên liệu và thực đơn.",
+        "Tích hợp các endpoint từ Spoonacular APIs để tra cứu thông tin dinh dưỡng và gợi ý món ăn.",
+        "Triển khai quy trình xác thực người dùng an toàn bằng Google Authentication.",
+        "Xây dựng bộ khung backend chuẩn mực sử dụng Layered Architecture, phân định rõ ranh giới giữa controller, service và data access.",
+        "Phát triển các API tính toán gợi ý nguyên liệu và công thức dựa trên dữ liệu đầu vào của người dùng."
+      ],
+      "resultAndStatus": "Dự án đã hoàn thành chu kỳ phát triển (04/2026 - 07/2026), đáp ứng đầy đủ các tiêu chuẩn đề ra của đồ án nhóm.",
+      "githubUrl": "https://github.com/MinkTuans/website-cook",
+      "architectureNotes": [
+        "Layered Architecture giúp code backend gọn gàng, giảm phụ thuộc và dễ dàng thay thế nguồn API ẩm thực."
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "tour-management-website",
+      "slug": "tour-management-website",
+      "name": "TOUR MANAGEMENT WEBSITE",
+      "projectType": "Group Project – 3 Members",
+      "timeframe": "11/2025 - 12/2025",
+      "tagline": "Nền tảng nội bộ giúp công ty lữ hành quản lý tour, phân công hướng dẫn viên và theo dõi lịch trình khách hàng.",
+      "role": "Fullstack Development & Team Lead",
+      "overview": "Một giải pháp phần mềm quản trị nội bộ dành cho các doanh nghiệp du lịch lữ hành. Hệ thống cho phép ban điều hành tạo tour, xếp lịch làm việc cho hướng dẫn viên, đồng thời cấp quyền cho hướng dẫn viên quản lý chi tiết hành trình, danh sách khách hàng và báo cáo thực địa.",
+      "whatIWorkedOn": "Đảm nhận vai trò trưởng nhóm phát triển: trực tiếp thiết kế kiến trúc hệ thống và cơ sở dữ liệu MySQL, xây dựng các tính năng backend chủ chốt, điều phối tiến độ công việc giữa các thành viên và tham gia tối ưu hiệu năng toàn bộ hệ thống.",
+      "technologies": [
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MySQL",
+        "GitHub"
+      ],
+      "keyFeatures": [
+        "Quản lý thông tin danh mục tour, lịch khởi hành và trạng thái booking",
+        "Phân công hướng dẫn viên theo từng tuyến điểm và khoảng thời gian linh hoạt",
+        "Cổng thông tin cho hướng dẫn viên tra cứu lịch trình và dữ liệu khách hàng",
+        "Kiểm soát dữ liệu và phân quyền chặt chẽ giữa ban quản lý và hướng dẫn viên"
+      ],
+      "myContribution": [
+        "Dẫn dắt nhóm phát triển (3 thành viên), lập kế hoạch kỹ thuật và điều phối phân chia công việc trong suốt dự án.",
+        "Thiết kế toàn bộ kiến trúc hệ thống và mô hình dữ liệu quan hệ MySQL cho tour, hướng dẫn viên và khách hàng.",
+        "Trực tiếp lập trình và thực hiện code review các tính năng backend và API cốt lõi.",
+        "Quản lý tiến độ task qua GitHub, hỗ trợ các thành viên giải quyết khó khăn kỹ thuật.",
+        "Triển khai các phân hệ quản lý tour du lịch và hồ sơ hướng dẫn viên.",
+        "Thực hiện debug toàn diện, tối ưu hoá câu truy vấn dữ liệu và nâng cao tốc độ tải trang."
+      ],
+      "resultAndStatus": "Dự án đã hoàn thành xuất sắc vào tháng 12/2025, được nghiệm thu với hiệu năng vận hành ổn định.",
+      "githubUrl": "https://github.com/MinkTuans",
+      "architectureNotes": [
+        "Mô hình dữ liệu MySQL được chuẩn hóa để tránh trùng lặp thông tin khách hàng và lịch trình tour."
+      ],
+      "isFeatured": true
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-ngoc-phi-thuy",
+      "company": "NGOC PHI THUY JADE A HANOI CO., LTD",
+      "timeframe": "05/2026 - 07/2026",
+      "position": "Web Developer Intern",
+      "technologies": [
+        "Laravel (Blade Template)",
+        "MySQL",
+        "Postman",
+        "Git/GitHub"
+      ],
+      "accomplishments": [
+        "Phát triển giao diện responsive cho hệ thống quản lý kho nội bộ, xây dựng các biểu mẫu (dynamic input forms) nhập liệu linh hoạt cho các biến thể và danh mục sản phẩm.",
+        "Tích hợp các backend API để hiển thị danh mục sản phẩm thời gian thực, cập nhật số lượng tồn kho tức thì và theo dõi lịch sử giao dịch trực tiếp trên frontend.",
+        "Xây dựng các UI component cảnh báo tồn kho tự động, triển khai hiệu ứng highlight cảnh báo màu đỏ trực quan khi số lượng sản phẩm chạm ngưỡng tối thiểu và icon chuông thông báo nổi bật.",
+        "Phối hợp làm việc nhóm chuyên nghiệp qua Git, chủ động debug và khắc phục triệt để các lỗi sai lệch bố cục UI trên đa dạng kích thước màn hình và thiết bị."
+      ],
+      "context": "Thời gian thực tập tại doanh nghiệp giúp rèn luyện tư duy sản phẩm thực tế, khả năng đáp ứng quy chuẩn code của công ty và giải quyết các bài toán giao diện phức tạp trong hệ thống vận hành nội bộ."
+    }
+  ],
+  "skillContributions": [
+    {
+      "id": "sc-1",
+      "skill": "PHP & Laravel (Service Architecture)",
+      "project": "MindNova AI",
+      "category": "Backend",
+      "contribution": "Xây dựng toàn bộ REST API cho khoá học, module, bài học và quiz theo chuẩn Service Architecture, đảm bảo phân tách nghiệp vụ mạch lạc."
+    },
+    {
+      "id": "sc-2",
+      "skill": "Cloudflare R2 (Signed URLs)",
+      "project": "MindNova AI",
+      "category": "Database & Cloud",
+      "contribution": "Triển khai luồng tải video/media bài giảng bảo mật bằng Signed URLs có thời hạn, thay thế hoàn toàn lưu trữ cục bộ và bảo vệ quyền sở hữu nội dung."
+    },
+    {
+      "id": "sc-3",
+      "skill": "Gemini API (LLM Integration)",
+      "project": "MindNova AI",
+      "category": "AI",
+      "contribution": "Tích hợp AI phân tích văn bản bài giảng, tự động đề xuất đề cương bài học và sinh bộ câu hỏi trắc nghiệm tự động (với cơ chế fallback OpenAI)."
+    },
+    {
+      "id": "sc-4",
+      "skill": "Laravel Reverb / Echo (WebSocket)",
+      "project": "MindNova AI",
+      "category": "Realtime & Tools",
+      "contribution": "Hiện thực hoá tính năng chatroom khoá học trực tuyến và hệ thống chuông thông báo in-app cập nhật hai chiều tức thì không cần reload trang."
+    },
+    {
+      "id": "sc-5",
+      "skill": "Supabase & PostgreSQL",
+      "project": "AI Cooking",
+      "category": "Database & Cloud",
+      "contribution": "Thiết kế toàn bộ schema cơ sở dữ liệu quan hệ, thiết lập bảng nguyên liệu, công thức và người dùng hỗ trợ gợi ý món ăn."
+    },
+    {
+      "id": "sc-6",
+      "skill": "Node.js & Layered Architecture",
+      "project": "AI Cooking",
+      "category": "Backend",
+      "contribution": "Xây dựng khung backend phân tách 3 lớp độc lập (Controller, Service, Data Access) giúp bảo trì và mở rộng tính năng thuận tiện."
+    },
+    {
+      "id": "sc-7",
+      "skill": "Spoonacular APIs & Google Auth",
+      "project": "AI Cooking",
+      "category": "Backend",
+      "contribution": "Tích hợp dịch vụ API thực phẩm bên thứ ba và cài đặt quy trình xác thực người dùng an toàn qua Google OAuth."
+    },
+    {
+      "id": "sc-8",
+      "skill": "System Architecture & MySQL",
+      "project": "TOUR MANAGEMENT WEBSITE",
+      "category": "Backend",
+      "contribution": "Đảm nhận vai trò Team Lead: thiết kế cấu trúc kiến trúc hệ thống và quan hệ cơ sở dữ liệu MySQL cho tour, hướng dẫn viên và khách hàng."
+    },
+    {
+      "id": "sc-9",
+      "skill": "Laravel Blade & Dynamic UI",
+      "project": "NGOC PHI THUY JADE A HANOI CO., LTD",
+      "category": "Frontend",
+      "contribution": "Xây dựng giao diện quản lý kho responsive, các form động cho biến thể hàng hóa và component cảnh báo đỏ tự động khi hàng tồn kho xuống thấp."
+    },
+    {
+      "id": "sc-10",
+      "skill": "Next.js & React & Tailwind CSS",
+      "project": "MindNova AI",
+      "category": "Frontend",
+      "contribution": "Phát triển giao diện người dùng hiện đại, tối ưu tương tác giữa sinh viên với AI Tutor và bảng điều khiển cho giảng viên."
+    }
+  ],
+  "lastUpdated": "2026-09-21"
+}

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #060a08;
+  --foreground: #f3f8f5;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #060a08;
+  color: #f3f8f5;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  overflow-x: hidden;
+  selection-background-color: #c89a3c;
+  selection-color: #060a08;
+}
+
+::selection {
+  background: #c89a3c;
+  color: #060a08;
+}
+
+/* Custom Steppe Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a08;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e372b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d4e3d;
+}
+
+/* Modal fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
