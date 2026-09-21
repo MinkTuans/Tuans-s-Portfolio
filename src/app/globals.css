@@ -75,7 +75,7 @@ body {
   animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Glassmorphism utility for morning meadow */
+/* Glassmorphism utility for morning meadow & pure nature */
 .glass-morning {
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(12px);
@@ -83,15 +83,38 @@ body {
   border: 1px solid rgba(229, 240, 230, 0.9);
 }
 
-.card-meadow {
-  background: #ffffff;
-  border: 1px solid #e5f0e6;
-  box-shadow: 0 10px 25px -5px rgba(36, 64, 40, 0.04), 0 8px 10px -6px rgba(36, 64, 40, 0.02);
+.glass-nature {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 201, 173, 0.45);
+  box-shadow: 0 16px 36px -6px rgba(22, 59, 40, 0.08), 0 8px 16px -4px rgba(22, 59, 40, 0.04);
 }
 
-.card-meadow:hover {
-  border-color: #cce2cd;
-  box-shadow: 0 15px 30px -5px rgba(36, 64, 40, 0.08), 0 10px 15px -5px rgba(36, 64, 40, 0.04);
+.glass-nature-dark {
+  background: rgba(22, 59, 40, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 201, 173, 0.25);
+  box-shadow: 0 20px 40px -8px rgba(11, 26, 18, 0.35);
+}
+
+.card-meadow, .card-nature {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(168, 201, 173, 0.4);
+  box-shadow: 0 12px 28px -5px rgba(22, 59, 40, 0.06), 0 6px 12px -4px rgba(22, 59, 40, 0.03);
+}
+
+.card-meadow:hover, .card-nature:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #6F9F72;
+  box-shadow: 0 20px 35px -5px rgba(31, 77, 50, 0.12), 0 10px 15px -5px rgba(31, 77, 50, 0.06);
+}
+
+.nature-glow {
+  box-shadow: 0 0 35px -5px rgba(111, 159, 114, 0.35);
 }
 
 /* Soft cinematic god-ray pulse */

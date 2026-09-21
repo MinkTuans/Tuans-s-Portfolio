@@ -10,6 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        nature: {
+          forest: "#1F4D32",
+          deep: "#163B28",
+          sage: "#A8C9AD",
+          moss: "#6F9F72",
+          cream: "#F7F6EC",
+          sky: "#CFE8F5",
+          sun: "#F3C77A",
+          amber: "#d97706",
+          dark: "#0e2419",
+        },
         meadow: {
           50: "#f4f8f4",
           100: "#e5f0e6",

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ProjectCaseStudy, GitHubRepo } from "@/types/portfolio";
 import {
   ArrowUpRight,
@@ -13,6 +14,7 @@ import {
   Sparkles,
   Star,
   Zap,
+  ExternalLink,
 } from "lucide-react";
 import ProjectCaseStudyModal from "../project-modal/ProjectCaseStudyModal";
 
@@ -44,7 +46,7 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
       case "css":
         return "bg-orange-500";
       default:
-        return "bg-meadow-600";
+        return "bg-nature-forest";
     }
   };
 
@@ -57,53 +59,71 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
     }
   };
 
+  // Dedicated Nature Illustration for each project ("Technology Inside Nature" Aesthetic)
+  const getProjectImage = (id: string) => {
+    switch (id) {
+      case "mindnova-ai":
+        return "/images/forest/project-mindnova-nature.jpg";
+      case "ai-cooking":
+        return "/images/forest/hero-morning.jpg";
+      case "tour-management":
+      default:
+        return "/images/forest/nature-campsite-contact.jpg";
+    }
+  };
+
   return (
-    <section id="projects" className="py-20 lg:py-28 relative bg-[#f4f7f3] border-t border-meadow-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 lg:py-28 relative overflow-hidden border-t border-[#A8C9AD]/40">
+      {/* Background Gradient & Ambient Meadow Light */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f4f8f4]/95 via-white/85 to-[#f4f8f4]/95 pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[600px] h-[600px] rounded-full bg-[#CFE8F5]/25 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-10 w-[550px] h-[550px] rounded-full bg-[#A8C9AD]/20 blur-[130px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-meadow-200 text-xs font-mono text-meadow-800 uppercase tracking-wider mb-3 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-sun-amber" />
-              <span>Section 03 • Dự Án Thực Tế & GitHub Repos</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#A8C9AD]/60 text-xs font-mono text-nature-deep uppercase tracking-wider mb-3 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-nature-sun" />
+              <span>Section 03 • Dự Án Trọng Điểm & Mã Nguồn Mở</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-stone-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-nature-deep tracking-tight">
               Sản Phẩm & Đóng Góp Kỹ Thuật
             </h2>
-            <p className="mt-3 text-base text-stone-600 leading-relaxed font-sans">
-              Bao gồm các <strong>dự án thực tế trọng điểm</strong> (kèm Case Study chuyên sâu) và các <strong>repository mã nguồn mở</strong> được tự động đồng bộ từ tài khoản GitHub.
+            <p className="mt-3 text-base text-stone-700 leading-relaxed font-sans">
+              Bao gồm các <strong>dự án thực tế trọng điểm</strong> (kèm Case Study chuyên sâu) và các <strong>repository mã nguồn mở</strong> được tự động đồng bộ từ GitHub cá nhân.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-white border border-meadow-200 shadow-sm self-start md:self-auto">
+          <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-white/85 backdrop-blur-md border border-[#A8C9AD]/50 shadow-sm self-start md:self-auto">
             <button
               onClick={() => setActiveFilter("all")}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all ${
                 activeFilter === "all"
-                  ? "bg-meadow-900 text-white shadow-sm"
-                  : "text-stone-600 hover:text-stone-900 hover:bg-meadow-50"
+                  ? "bg-nature-forest text-white shadow-xs"
+                  : "text-stone-700 hover:text-nature-deep hover:bg-[#A8C9AD]/20"
               }`}
             >
               Tất Cả ({totalCount})
             </button>
             <button
               onClick={() => setActiveFilter("featured")}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all ${
                 activeFilter === "featured"
-                  ? "bg-meadow-900 text-white shadow-sm"
-                  : "text-stone-600 hover:text-stone-900 hover:bg-meadow-50"
+                  ? "bg-nature-forest text-white shadow-xs"
+                  : "text-stone-700 hover:text-nature-deep hover:bg-[#A8C9AD]/20"
               }`}
             >
               Trọng Điểm ({projects.length})
             </button>
             <button
               onClick={() => setActiveFilter("github")}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-all flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all flex items-center gap-1.5 ${
                 activeFilter === "github"
-                  ? "bg-meadow-900 text-white shadow-sm"
-                  : "text-stone-600 hover:text-stone-900 hover:bg-meadow-50"
+                  ? "bg-nature-forest text-white shadow-xs"
+                  : "text-stone-700 hover:text-nature-deep hover:bg-[#A8C9AD]/20"
               }`}
             >
               <Github className="w-3.5 h-3.5" />
@@ -112,13 +132,13 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
           </div>
         </div>
 
-        {/* Featured Projects Sub-Section */}
+        {/* Featured Projects Grid (Large, Prominent Cards with Technology inside Nature aesthetic) */}
         {showFeatured && (
           <div className="mb-14">
             {activeFilter === "all" && (
               <div className="flex items-center gap-2 mb-6">
-                <Sparkles className="w-4 h-4 text-sun-amber" />
-                <h3 className="text-sm font-mono uppercase tracking-wider text-meadow-900 font-bold">
+                <Sparkles className="w-4 h-4 text-nature-amber" />
+                <h3 className="text-sm font-mono uppercase tracking-wider text-nature-deep font-bold">
                   Dự Án Trọng Điểm & Case Study Chuyên Sâu
                 </h3>
               </div>
@@ -128,89 +148,106 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
               {projects.map((project) => (
                 <div
                   key={project.id}
-                  className="group relative flex flex-col justify-between rounded-3xl bg-white hover:bg-white border border-meadow-200/90 hover:border-meadow-400 p-6 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-meadow-900/5 hover:-translate-y-1"
+                  className="group relative flex flex-col justify-between rounded-3xl bg-white/90 hover:bg-white backdrop-blur-xl border border-[#A8C9AD]/60 hover:border-nature-forest transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-nature-forest/15 hover:-translate-y-1.5 overflow-hidden"
                 >
-                  <div>
-                    {/* Top Info Badge */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="px-3 py-1 rounded-full text-[11px] font-mono font-semibold text-sun-amber bg-sun-light border border-sun-amber/20">
+                  {/* Technology Inside Nature Project Visual Banner */}
+                  <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-stone-100">
+                    <Image
+                      src={getProjectImage(project.id)}
+                      alt={project.name}
+                      fill
+                      quality={85}
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+
+                    {/* Top Badges over banner */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-10">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-mono font-bold text-white bg-nature-forest/90 backdrop-blur-md border border-white/20 shadow-sm">
                         {project.projectType}
                       </span>
-                      <span className="text-xs font-mono text-stone-600 flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5 text-stone-600" />
+                      <span className="px-3 py-1 rounded-full text-[11px] font-mono text-white/90 bg-black/40 backdrop-blur-md border border-white/10 flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-nature-sun" />
                         {project.timeframe}
                       </span>
                     </div>
 
-                    {/* Project Title & Role */}
-                    <h3 className="text-2xl font-display font-bold text-stone-900 group-hover:text-meadow-900 transition-colors">
-                      {project.name}
-                    </h3>
-                    <div className="mt-1 text-xs font-mono font-semibold text-meadow-800">
-                      Vai trò: {project.role}
-                    </div>
-
-                    {/* Short Tagline / Summary */}
-                    <p className="mt-3 text-sm text-stone-600 leading-relaxed font-sans line-clamp-3">
-                      {project.tagline}
-                    </p>
-
-                    {/* What I Directly Built Highlights */}
-                    <div className="mt-6 pt-5 border-t border-meadow-100">
-                      <div className="text-[11px] font-mono uppercase tracking-wider text-stone-700 font-semibold mb-2.5 flex items-center gap-1.5">
-                        <Zap className="w-3.5 h-3.5 text-sun-amber" />
-                        <span>Trực tiếp viết mã (Highlights):</span>
-                      </div>
-                      <ul className="space-y-2">
-                        {project.myContribution.slice(0, 2).map((contrib, cIdx) => (
-                          <li key={cIdx} className="flex items-start gap-2 text-xs text-stone-800 leading-relaxed font-sans">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-meadow-600 mt-0.5 flex-shrink-0" />
-                            <span className="line-clamp-2">{contrib}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Technologies Badges */}
-                    <div className="mt-6 flex flex-wrap gap-1.5">
-                      {project.technologies.slice(0, 5).map((t) => (
-                        <span
-                          key={t}
-                          className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono bg-meadow-50 text-meadow-900 border border-meadow-200"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                      {project.technologies.length > 5 && (
-                        <span className="px-2 py-0.5 rounded-lg text-[10px] font-mono text-stone-600 bg-stone-100 border border-stone-200">
-                          +{project.technologies.length - 5}
-                        </span>
-                      )}
+                    {/* Project Title inside banner bottom */}
+                    <div className="absolute bottom-3 left-4 right-4 z-10">
+                      <h3 className="text-xl sm:text-2xl font-display font-bold text-white tracking-tight drop-shadow-sm">
+                        {project.name}
+                      </h3>
+                      <p className="text-xs font-mono font-semibold text-nature-sun">
+                        Vai trò: {project.role}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Bottom Action Area */}
-                  <div className="mt-8 pt-5 border-t border-meadow-100 flex items-center justify-between gap-3">
-                    <button
-                      onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-meadow-800 hover:text-meadow-950 transition-colors group/btn"
-                    >
-                      <span>Xem Full Case Study (01-06)</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                  {/* Card Content Area */}
+                  <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                    <div>
+                      {/* Short Tagline / Summary */}
+                      <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans line-clamp-3">
+                        {project.tagline}
+                      </p>
 
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-xl text-stone-600 hover:text-stone-900 bg-meadow-50 hover:bg-meadow-100 border border-meadow-200 transition-colors shadow-sm"
-                        title="Xem trên GitHub"
-                        aria-label={`Mã nguồn ${project.name} trên GitHub`}
+                      {/* What I Directly Built Highlights */}
+                      <div className="mt-5 pt-4 border-t border-[#A8C9AD]/30">
+                        <div className="text-[11px] font-mono uppercase tracking-wider text-nature-deep font-bold mb-2.5 flex items-center gap-1.5">
+                          <Zap className="w-3.5 h-3.5 text-nature-amber" />
+                          <span>Trực tiếp viết mã (Highlights):</span>
+                        </div>
+                        <ul className="space-y-2">
+                          {project.myContribution.slice(0, 2).map((contrib, cIdx) => (
+                            <li key={cIdx} className="flex items-start gap-2 text-xs text-stone-800 leading-relaxed font-sans">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-nature-forest mt-0.5 flex-shrink-0" />
+                              <span className="line-clamp-2">{contrib}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Technologies Badges */}
+                      <div className="mt-5 flex flex-wrap gap-1.5">
+                        {project.technologies.slice(0, 5).map((t) => (
+                          <span
+                            key={t}
+                            className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono font-medium bg-[#F7F6EC] text-nature-deep border border-[#A8C9AD]/50"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                        {project.technologies.length > 5 && (
+                          <span className="px-2 py-0.5 rounded-lg text-[10px] font-mono text-stone-500 bg-white border border-stone-200">
+                            +{project.technologies.length - 5}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Bottom Action Area */}
+                    <div className="mt-6 pt-5 border-t border-[#A8C9AD]/30 flex items-center justify-between gap-3">
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-nature-forest hover:text-nature-deep transition-colors group/btn"
                       >
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    )}
+                        <span>Xem Case Study (01-06)</span>
+                        <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform text-nature-forest" />
+                      </button>
+
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-xl text-stone-700 hover:text-white bg-white hover:bg-nature-forest border border-[#A8C9AD]/50 transition-all shadow-2xs"
+                          title="Xem trên GitHub"
+                          aria-label={`Mã nguồn ${project.name} trên GitHub`}
+                        >
+                          <ArrowUpRight className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -223,12 +260,12 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
           <div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
               <div className="flex items-center gap-2">
-                <Github className="w-4 h-4 text-stone-700" />
-                <h3 className="text-sm font-mono uppercase tracking-wider text-stone-800 font-bold">
+                <Github className="w-4 h-4 text-nature-deep" />
+                <h3 className="text-sm font-mono uppercase tracking-wider text-nature-deep font-bold">
                   Kho Repository GitHub (Tự Động Đồng Bộ)
                 </h3>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono text-emerald-700">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[11px] font-mono text-emerald-800 font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>Auto-synced • Loại trừ portfolio & profile repo</span>
               </div>
@@ -238,24 +275,24 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
               {gitHubRepos.map((repo) => (
                 <div
                   key={repo.id}
-                  className="flex flex-col justify-between p-6 rounded-3xl bg-white border border-meadow-200 hover:border-meadow-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                  className="flex flex-col justify-between p-6 rounded-3xl bg-white/85 hover:bg-white backdrop-blur-xl border border-[#A8C9AD]/50 hover:border-nature-forest hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>
                     {/* Top Row: Language & Updated Date */}
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <div className="flex items-center gap-1.5">
-                        <span className={`w-2 h-2 rounded-full ${getLanguageColor(repo.language)}`} />
-                        <span className="text-xs font-mono font-medium text-stone-700">
+                        <span className={`w-2.5 h-2.5 rounded-full ${getLanguageColor(repo.language)}`} />
+                        <span className="text-xs font-mono font-bold text-stone-800">
                           {repo.language || "Code"}
                         </span>
                       </div>
-                      <span className="text-[11px] font-mono text-stone-600">
-                        Cập nhật: {formatDate(repo.updated_at)}
+                      <span className="text-[11px] font-mono text-stone-500">
+                        {formatDate(repo.updated_at)}
                       </span>
                     </div>
 
                     {/* Repo Title */}
-                    <h4 className="text-lg font-display font-bold text-stone-900 hover:text-meadow-900 transition-colors">
+                    <h4 className="text-lg font-display font-bold text-nature-deep hover:text-nature-forest transition-colors">
                       <a
                         href={repo.html_url}
                         target="_blank"
@@ -263,22 +300,22 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
                         className="inline-flex items-center gap-1.5"
                       >
                         <span>{repo.name}</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-stone-600" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-stone-400" />
                       </a>
                     </h4>
 
                     {/* Repo Description */}
-                    <p className="mt-2 text-xs text-stone-600 font-sans leading-relaxed line-clamp-3">
+                    <p className="mt-2 text-xs text-stone-700 font-sans leading-relaxed line-clamp-3">
                       {repo.description || "Dự án phát triển mã nguồn mở trên GitHub."}
                     </p>
 
-                    {/* Topics/Tags if any */}
+                    {/* Topics if any */}
                     {repo.topics && repo.topics.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-1">
                         {repo.topics.slice(0, 3).map((topic) => (
                           <span
                             key={topic}
-                            className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 text-stone-600"
+                            className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#F7F6EC] text-nature-deep border border-[#A8C9AD]/40"
                           >
                             #{topic}
                           </span>
@@ -288,7 +325,7 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
                   </div>
 
                   {/* Bottom Row: Stars & GitHub Link Button */}
-                  <div className="mt-5 pt-4 border-t border-meadow-100 flex items-center justify-between">
+                  <div className="mt-5 pt-4 border-t border-[#A8C9AD]/30 flex items-center justify-between">
                     <div className="flex items-center gap-3 text-xs font-mono text-stone-600">
                       <span className="flex items-center gap-1">
                         <Star className="w-3.5 h-3.5 text-amber-500" />
@@ -296,7 +333,7 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
                       </span>
                       {repo.forks_count > 0 && (
                         <span className="flex items-center gap-1">
-                          <GitFork className="w-3.5 h-3.5 text-stone-600" />
+                          <GitFork className="w-3.5 h-3.5 text-stone-500" />
                           <span>{repo.forks_count}</span>
                         </span>
                       )}
@@ -306,7 +343,7 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-mono font-medium text-meadow-800 hover:text-meadow-950 transition-colors"
+                      className="inline-flex items-center gap-1 text-xs font-mono font-bold text-nature-forest hover:text-nature-deep transition-colors"
                     >
                       <span>Xem repo</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -320,7 +357,7 @@ export default function Projects({ projects, gitHubRepos = [] }: ProjectsProps) 
 
       </div>
 
-      {/* Case Study Full Modal */}
+      {/* Case Study Full Modal (Preserved 100% functionality) */}
       <ProjectCaseStudyModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

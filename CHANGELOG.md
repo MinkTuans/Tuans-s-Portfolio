@@ -4,6 +4,61 @@ Lịch sử thay đổi và cập nhật tính năng của dự án **Tuấn's P
 
 ---
 
+## 2026-09-21 — Tái Thiết Kế Toàn Bộ Website Portfolio Theo Concept Thuần Thiên Nhiên
+
+### Changed
+- **Tái thiết kế giao diện toàn diện theo concept THUẦN THIÊN NHIÊN (Nature Edition):**
+  - Chuyển đổi toàn bộ website sang bảng màu thiên nhiên hữu cơ: Forest Green (`#1F4D32`), Deep Green (`#163B28`), Sage (`#A8C9AD`), Moss (`#6F9F72`), Cream (`#F7F6EC`), Sky Blue (`#CFE8F5`), Warm Sun (`#F3C77A`).
+  - Loại bỏ hoàn toàn nền phẳng trắng đơn điệu, thay bằng hệ thống cảnh quan thiên nhiên đa tầng (núi non, rừng thông, hồ nước, đồng cỏ thảo nguyên uốn lượn và bầu trời sớm mai).
+  - Áp dụng phong cách kính mờ hữu cơ `.glass-nature` và `.card-nature` (`backdrop-blur-md`, viền Sage mềm mại, bóng đổ hữu cơ) mang lại cảm giác điện ảnh (cinematic) sang trọng nhưng vẫn đảm bảo độ tương phản cao và dễ đọc tuyệt đối.
+- **Tái cấu trúc các phân hệ UI/UX:**
+  - **Navbar:** Thanh floating glass bo cong mềm mại với background kính mờ `rgba(255,255,255,0.78)`, border Sage nhẹ, nhận diện "Phạm Minh Tuấn / THE WOLF'S JOURNEY", menu 7 chặng, active pill màu Forest Green và các nút CTA nổi bật.
+  - **Hero:** Full-width background núi xa, hồ nước, rặng thông, ánh bình minh và chú sói uy nghi trên mỏm đá nhìn xuống thung lũng (khớp với mockup tham chiếu). Giữ nguyên thông tin CV, bio cô đọng, mục tiêu nghề nghiệp ngắn/dài hạn, thẻ "The Wolf's Spirit" với Interactive Wolf Avatar dõi mắt theo chuột.
+  - **The Wolf Run:** Thiết kế dạng con đường mòn xuyên qua thiên nhiên nối 3 cột mốc: FPT Polytechnic → Ngọc Phi Thúy Jade → MindNova AI với thẻ kính mờ và hoạt cảnh chú sói sải bước bền bỉ theo mức cuộn trang.
+  - **What I Have Built:** Ma trận chứng minh năng lực từ kỹ năng → sản phẩm → đóng góp mã nguồn thực tế với thẻ kính mờ cao cấp.
+  - **Natural Skill Map (Skills):** Phân chia năng lực thành 6 vùng sinh thái tự nhiên: Forest (Frontend), Mountain (Backend), Lake (Database & Cloud), Sky (AI), Camp (Dev Tools & Workflow), Meadow (Soft Skills & Practices).
+  - **Projects:** Thẻ dự án khổ lớn tích hợp visual banner "Technology Inside Nature" (bàn làm việc laptop UI trong cabin kính giữa rừng/bên hồ), đầy đủ vai trò, công nghệ, highlights trực tiếp viết mã, nút mở Case Study Modal (01-06) và khu vực auto-synced GitHub repositories.
+  - **Experience & Education:** Timeline dọc mô phỏng con đường mòn / thân cây với các trạm dừng chân (Camp) rõ ràng.
+  - **Contact:** Khu cắm trại cuối hành trình với background hồ nước hoàng hôn, biển chỉ đường gỗ mộc mạc, hình bóng chú sói nghỉ ngơi trên đồi xa, tính năng 1-click copy Email/SĐT và nút CTA "Let's Build Something".
+  - **Footer:** Chuyển sang dark forest Deep Green (`#163B28`) với silhouette rặng thông nhiều lớp và chú sói nhỏ trên nền trời sao mờ.
+- **Bảo toàn dữ liệu:** Giữ nguyên 100% dữ liệu CV thực tế, học vấn, kinh nghiệm, dự án từ `portfolio-data.json`.
+
+### Files / Modules
+- `tailwind.config.ts` (Bổ sung bảng màu nature)
+- `src/app/globals.css` (Bổ sung utility classes `.glass-nature`, `.card-nature`, `.nature-glow`)
+- `src/components/navigation/Navbar.tsx` (Floating glass navbar)
+- `src/components/sections/Hero.tsx` (Cinematic mountain valley landscape poster)
+- `src/components/sections/TheWolfRun.tsx` (Con đường mòn xuyên thiên nhiên & hoạt cảnh sói)
+- `src/components/sections/WhatIHaveBuilt.tsx` (Ma trận kỹ năng -> dự án -> đóng góp thực tế)
+- `src/components/sections/Skills.tsx` (Natural Skill Map 6 vùng sinh thái)
+- `src/components/sections/Projects.tsx` (Thẻ dự án khổ lớn, Technology Inside Nature banner)
+- `src/components/sections/Experience.tsx` (Forest trail vertical timeline & Camps)
+- `src/components/sections/Contact.tsx` (Khu cắm trại hoàng hôn, biển gỗ & nút CTA)
+- `src/components/navigation/Footer.tsx` (Dark forest Deep Green footer)
+- `src/components/forest/FloatingFoliage.tsx` (Lá thông và đốm nắng nhẹ)
+- `src/app/page.tsx` (Bố cục tích hợp trang chủ)
+- `public/images/forest/nature-*.jpg` (Các assets phong cảnh thiên nhiên chuẩn điện ảnh)
+- `project_knowledge_base.md`
+- `CHANGELOG.md`
+
+### Reason
+- Đáp ứng yêu cầu của người dùng: Thiết kế lại TOÀN BỘ website portfolio hiện tại theo concept THUẦN THIÊN NHIÊN dựa trên ảnh mockup tham chiếu (`media_1789964805491.jpg`), loại bỏ nền trắng phẳng, không dùng cyberpunk/neon, giữ nguyên 100% dữ liệu CV và tính năng hiện có.
+
+### Verification
+- Chạy lệnh `npm run build` thành công xuất sắc:
+  - 100% Type-safe & Lint checks passed.
+  - Sinh thành công toàn bộ 10 static & dynamic routes.
+  - Kích thước tải trang chủ tối ưu (chỉ 34.4 kB first load JS).
+- Đối soát thẩm mỹ và bố cục bám sát từng phân hệ trong ảnh mockup tham chiếu.
+
+### Notes
+- Sử dụng các lớp ảnh landscape tối ưu cùng gradient vignette để duy trì khả năng đọc chữ đạt chuẩn tương phản cao trên nền thiên nhiên.
+
+### Remaining
+- Không có. Toàn bộ các yêu cầu của người dùng đã được thực hiện và kiểm thử thành công.
+
+---
+
 ## 2026-09-21 — Khắc Phục Chấm Chỉ Báo Kỹ Năng & Thanh Điều Hướng (Active Section Detection)
 
 ### Changed

@@ -23,11 +23,11 @@ export default async function HomePage() {
   ]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fbfcf9] text-stone-900 selection:bg-meadow-800 selection:text-white relative overflow-hidden">
-      {/* 1. Subtle Floating Foliage & Sun Motes (100% Transparent Canvas, NO solid box) */}
+    <div className="flex flex-col min-h-screen bg-[#f4f8f4] text-stone-900 selection:bg-nature-forest selection:text-white relative overflow-hidden font-sans">
+      {/* 1. Subtle Floating Foliage & Golden Sun Motes (100% Transparent Canvas) */}
       <FloatingFoliage />
 
-      {/* 2. Sticky Navigation (Morning Meadow) */}
+      {/* 2. Floating Glass Nature Navigation */}
       <Navbar
         fullName={data.profile.fullName}
         githubUrl={data.profile.contact.github}
@@ -35,41 +35,41 @@ export default async function HomePage() {
 
       {/* 3. Main The Wolf's Journey Portfolio Content with Scroll-Driven Revelations */}
       <main className="flex-grow relative z-10">
-        {/* 01. Hero Section */}
+        {/* 01. Hero Section (Cinematic Mountain Valley with Wolf on Cliff) */}
         <Hero profile={data.profile} />
 
-        {/* 02. The Wolf Run (Scroll-Driven Running Wolf Across Grassland) */}
-        <ScrollReveal direction="up" distance={40} threshold={0.05}>
+        {/* 02. The Wolf Run (Scroll-Driven Running Wolf Across Nature Grassland & Milestones) */}
+        <ScrollReveal direction="up" distance={35} threshold={0.05}>
           <TheWolfRun />
         </ScrollReveal>
 
         {/* 03. What I Have Built (Skill -> Project -> Contribution Matrix) */}
-        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+        <ScrollReveal direction="up" distance={35} threshold={0.08}>
           <WhatIHaveBuilt mappings={data.skillContributions} />
         </ScrollReveal>
 
         {/* 04. Projects Showcase with Case Studies & Auto-synced GitHub Repos */}
-        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+        <ScrollReveal direction="up" distance={35} threshold={0.08}>
           <Projects projects={data.projects} gitHubRepos={gitHubRepos} />
         </ScrollReveal>
 
-        {/* 05. Experience & Education Milestones */}
-        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+        {/* 05. Experience & Education Milestones (Forest Trail Camps) */}
+        <ScrollReveal direction="up" distance={35} threshold={0.08}>
           <Experience experience={data.experience} education={data.education} />
         </ScrollReveal>
 
-        {/* 06. Categorized Skill Ecosystem */}
-        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+        {/* 06. Natural Skill Map (Forest, Mountain, Lake, Sky, Camp, Meadow) */}
+        <ScrollReveal direction="up" distance={35} threshold={0.08}>
           <Skills categories={data.skillCategories} />
         </ScrollReveal>
 
-        {/* 07. Verified Direct Contact Channels */}
-        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+        {/* 07. Verified Direct Contact Channels (Sunset Campsite Trail End) */}
+        <ScrollReveal direction="up" distance={35} threshold={0.08}>
           <Contact contact={data.profile.contact} fullName={data.profile.fullName} />
         </ScrollReveal>
       </main>
 
-      {/* 4. Public Footer */}
+      {/* 4. Deep Forest Green Footer */}
       <Footer
         fullName={data.profile.fullName}
         contact={data.profile.contact}
