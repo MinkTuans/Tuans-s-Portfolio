@@ -10,6 +10,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        meadow: {
+          50: "#f4f8f4",
+          100: "#e5f0e6",
+          200: "#cce2cd",
+          300: "#a5cfa8",
+          400: "#74b379",
+          500: "#4f9556",
+          600: "#3d7843",
+          700: "#326038",
+          800: "#2a4c2e",
+          900: "#244028",
+          950: "#102313",
+        },
+        sky: {
+          morning: "#f0f8ff",
+          soft: "#e0f2fe",
+          breeze: "#bae6fd",
+        },
+        sun: {
+          warm: "#f59e0b",
+          amber: "#d97706",
+          light: "#fef3c7",
+          glow: "#fffbeb",
+        },
+        olive: {
+          50: "#f7fee7",
+          500: "#84cc16",
+          700: "#4d7c0f",
+          900: "#365314",
+        },
+        earth: {
+          sand: "#e7dec8",
+          warm: "#854d0e",
+          soil: "#451a03",
+          stone: "#1c1917",
+        },
         forest: {
           50: "#f2f7f3",
           100: "#e0ede2",
@@ -43,14 +79,16 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["var(--font-inter)", "var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-cinzel)", "var(--font-hand)", "Georgia", "serif"],
         hand: ["var(--font-hand)", "cursive", "sans-serif"],
-        display: ["var(--font-hand)", "Georgia", "serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       animation: {
         "drift-slow": "drift 18s ease-in-out infinite alternate",
         "sway-grass": "sway 4s ease-in-out infinite alternate",
         "sun-pulse": "sunPulse 6s ease-in-out infinite",
+        "float-slow": "floatSlow 8s ease-in-out infinite",
         "float-leaf": "floatLeaf 10s ease-in-out infinite",
         "fog-flow": "fogFlow 25s linear infinite",
       },
@@ -66,6 +104,10 @@ const config: Config = {
         sunPulse: {
           "0%, 100%": { opacity: "0.85", transform: "scale(1)" },
           "50%": { opacity: "1", transform: "scale(1.05)" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-12px)" },
         },
         floatLeaf: {
           "0%": { transform: "translateY(0) rotate(0deg)", opacity: "0" },

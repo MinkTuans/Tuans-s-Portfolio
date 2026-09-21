@@ -60,10 +60,24 @@ export interface ContactInfo {
   githubUsername: string;
 }
 
+export interface CareerObjectives {
+  shortTerm: string;
+  longTerm: string;
+}
+
+export interface EducationItem {
+  major: string;
+  school: string;
+  timeframe: string;
+  gpa: string;
+}
+
 export interface ProfileInfo {
   fullName: string;
+  role: string;
   accentTitle: string;
   conciseBio: string;
+  careerObjectives?: CareerObjectives;
   coreSkills: string[];
   avatarUrl: string;
   contact: ContactInfo;
@@ -84,10 +98,12 @@ export interface GitHubRepo {
 
 export interface PortfolioData {
   profile: ProfileInfo;
+  education?: EducationItem;
   skillCategories: SkillCategory[];
   projects: ProjectCaseStudy[];
   experience: ExperienceItem[];
   skillContributions: SkillContributionMapping[];
   lastUpdated: string;
 }
+
 

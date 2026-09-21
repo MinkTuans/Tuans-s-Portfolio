@@ -1,8 +1,13 @@
 {
   "profile": {
     "fullName": "Phạm Minh Tuấn",
-    "accentTitle": "The Wolf's Journey • Software & Web Developer",
+    "role": "Frontend Intern",
+    "accentTitle": "The Wolf's Journey • Frontend & Fullstack Web Developer",
     "conciseBio": "Lập trình viên Web tập trung vào kiến trúc Laravel Service, Next.js và Supabase. Có kinh nghiệm thực tế xây dựng REST API, xử lý upload media qua Cloudflare R2 với Signed URLs, tích hợp Gemini AI và hệ thống thời gian thực với Laravel Reverb.",
+    "careerObjectives": {
+      "shortTerm": "Tích lũy kinh nghiệm thực tế qua các dự án trong môi trường chuyên nghiệp, hoàn thành xuất sắc kỳ thực tập và trở thành nhân viên chính thức.",
+      "longTerm": "Nâng cao chuyên môn sâu về TypeScript và UI/UX hiện đại, phát triển lên vị trí Senior Frontend và gắn bó xây dựng sự nghiệp lâu dài cùng công ty."
+    },
     "coreSkills": [
       "PHP & Laravel",
       "Next.js & React",
@@ -22,6 +27,12 @@
       "github": "https://github.com/MinkTuans",
       "githubUsername": "MinkTuans"
     }
+  },
+  "education": {
+    "major": "Lập trình Web (Web Programming)",
+    "school": "Cao đẳng FPT Polytechnic (FPT Polytechnic College)",
+    "timeframe": "2024 - 2026",
+    "gpa": "7.7 / 10"
   },
   "skillCategories": [
     {
