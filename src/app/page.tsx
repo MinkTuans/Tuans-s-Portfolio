@@ -1,5 +1,6 @@
 import React from "react";
 import { getPortfolioData } from "@/lib/data-service";
+import { getGitHubRepos } from "@/lib/github";
 import Navbar from "@/components/navigation/Navbar";
 import Hero from "@/components/sections/Hero";
 import TheWolfRun from "@/components/sections/TheWolfRun";
@@ -13,7 +14,10 @@ import Footer from "@/components/navigation/Footer";
 export const revalidate = 60; // ISR revalidate every 60 seconds
 
 export default async function HomePage() {
-  const data = await getPortfolioData();
+  const [data, gitHubRepos] = await Promise.all([
+    getPortfolioData(),
+    getGitHubRepos("MinkTuans"),
+  ]);
 
   return (
     <div className="flex flex-col min-h-screen bg-[#fbfcf9] text-stone-900">
@@ -34,8 +38,8 @@ export default async function HomePage() {
         {/* 03. What I Have Built (Skill -> Project -> Contribution Matrix) */}
         <WhatIHaveBuilt mappings={data.skillContributions} />
 
-        {/* 04. Projects Showcase with 6-Part Case Studies */}
-        <Projects projects={data.projects} />
+        {/* 04. Projects Showcase with 6-Part Case Studies & Auto-synced GitHub Repos */}
+        <Projects projects={data.projects} gitHubRepos={gitHubRepos} />
 
         {/* 05. Experience Milestones */}
         <Experience experience={data.experience} />

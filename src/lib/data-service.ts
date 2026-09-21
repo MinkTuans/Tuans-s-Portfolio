@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { PortfolioData } from "@/types/portfolio";
 import { generateReadmeContent } from "./readme-generator";
+import { getGitHubRepos } from "./github";
 import fallbackData from "@/data/portfolio-data.json";
 
 const DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
@@ -29,8 +30,9 @@ export async function savePortfolioData(data: PortfolioData): Promise<{ success:
     // 1. Write to Single Source of Truth
     fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(updatedData, null, 2), "utf-8");
 
-    // 2. Automatically sync to GitHub README.md
-    const readmeContent = generateReadmeContent(updatedData);
+    // 2. Fetch live GitHub repos and sync to GitHub README.md
+    const repos = await getGitHubRepos(updatedData.profile.contact?.githubUsername || "MinkTuans");
+    const readmeContent = generateReadmeContent(updatedData, repos);
     fs.writeFileSync(README_FILE_PATH, readmeContent, "utf-8");
 
     return { success: true };
@@ -43,10 +45,12 @@ export async function savePortfolioData(data: PortfolioData): Promise<{ success:
 export async function syncReadmeNow(): Promise<{ success: boolean; error?: string }> {
   try {
     const currentData = await getPortfolioData();
-    const readmeContent = generateReadmeContent(currentData);
+    const repos = await getGitHubRepos(currentData.profile.contact?.githubUsername || "MinkTuans");
+    const readmeContent = generateReadmeContent(currentData, repos);
     fs.writeFileSync(README_FILE_PATH, readmeContent, "utf-8");
     return { success: true };
   } catch (error) {
     return { success: false, error: (error as Error).message };
   }
 }
+
