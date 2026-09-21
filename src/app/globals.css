@@ -9,7 +9,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   color-scheme: light;
+}
+
+section[id] {
+  scroll-snap-align: start;
+  scroll-margin-top: 76px;
 }
 
 body {
