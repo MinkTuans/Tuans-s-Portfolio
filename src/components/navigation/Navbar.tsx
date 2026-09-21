@@ -33,30 +33,67 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // IntersectionObserver to accurately track current active section ID
+  // Accurate and reliable active section scroll detection
   useEffect(() => {
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
-          setActiveSection(entry.target.id);
+    let ticking = false;
+
+    const calculateActiveSection = () => {
+      // 1. If at the bottom of the page, activate the last section ('contact')
+      const isAtBottom =
+        window.innerHeight + Math.round(window.scrollY) >=
+        document.documentElement.scrollHeight - 70;
+
+      if (isAtBottom) {
+        setActiveSection(navLinks[navLinks.length - 1].id);
+        return;
+      }
+
+      // 2. Reading line offset: 160px from top of viewport (below fixed navbar)
+      const readingLine = 160;
+
+      // Check sections from bottom to top: the lowest section that has scrolled past the reading line is active
+      for (let i = navLinks.length - 1; i >= 0; i--) {
+        const link = navLinks[i];
+        const el = document.getElementById(link.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= readingLine) {
+            setActiveSection(link.id);
+            return;
+          }
         }
-      });
+      }
+
+      // Fallback to first section
+      setActiveSection(navLinks[0].id);
     };
 
-    const observerOptions = {
-      root: null,
-      rootMargin: "-80px 0px -40% 0px", // Offset for fixed navbar and viewport center
-      threshold: [0.25, 0.5, 0.75],
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 25);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          calculateActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && navLinks.some((l) => l.id === hash)) {
+        setActiveSection(hash);
+      }
+    };
 
-    navLinks.forEach((link) => {
-      const el = document.getElementById(link.id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("hashchange", handleHashChange);
+    calculateActiveSection();
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   return (
@@ -97,6 +134,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
                   <a
                     key={link.id}
                     href={link.href}
+                    onClick={() => setActiveSection(link.id)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                       isActive
                         ? "bg-meadow-800 text-white font-semibold shadow-sm scale-105"
