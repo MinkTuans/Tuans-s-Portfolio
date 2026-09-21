@@ -4,6 +4,33 @@ Lịch sử thay đổi và cập nhật tính năng của dự án **Tuấn's P
 
 ---
 
+## 2026-09-21 — Khắc Phục Chấm Chỉ Báo Kỹ Năng & Thanh Điều Hướng (Active Section Detection)
+
+### Changed
+- **Khắc phục lỗi chấm chỉ báo không đổi màu ở phần Kỹ Năng (`#skills`):**
+  - Thay thế cơ chế `IntersectionObserver` với tỷ lệ diện tích cố định (vốn thất bại với các section có chiều cao lớn hơn nhiều so với viewport như `#skills` ~1500px) bằng thuật toán **Reading-Line Scroll Tracking**.
+  - Kiểm tra vị trí đọc thực tế từ dưới lên trên (`rect.top <= 160px`) kết hợp với kiểm tra chạm đáy trang (`window.innerHeight + window.scrollY >= scrollHeight - 70px`), đảm bảo nhận diện chính xác 100% mục đang đọc dù section dài hay ngắn.
+  - Tích hợp sự kiện `hashchange` giúp cập nhật ngay lập tức trạng thái active khi click liên kết neo `#skills`, `#projects`, v.v.
+  - Bổ sung sự kiện `onClick={() => setActiveSection(link.id)}` cho cả danh mục trên top Navbar và các chấm tròn trên thanh điều hướng bên phải (right floating rail).
+  - Tăng cường hiệu ứng trực quan cho chấm tròn đang active: kích thước lớn hơn (`w-3.5 h-3.5`), ánh sáng hổ phách ấm áp (`bg-sun-amber ring-4 ring-sun-warm/35 shadow-md scale-110`) giúp nổi bật rõ ràng trên mọi độ phân giải.
+
+### Files / Modules
+- `src/components/navigation/Navbar.tsx`
+- `CHANGELOG.md`
+- `project_knowledge_base.md`
+
+### Reason
+- Đáp ứng phản hồi của người dùng: "Trang kĩ năng chưa đổi màu chấm bên phải". Khi người dùng cuộn đến phần "Bản Đồ Năng Lực Kỹ Thuật" (`#skills`), chấm thứ 6 trên thanh rail bên phải không sáng lên màu vàng hổ phách và thanh menu trên cùng vẫn bị kẹt ở "Kinh Nghiệm".
+
+### Verification
+- Chạy lệnh `npm run build` thành công (0 lỗi, 10/10 static pages generated).
+- Kiểm tra giải thuật tính toán tọa độ viewport với các section dài (>1500px) và khi cuộn nhanh giữa các section.
+
+### Notes
+- Đối với thanh điều hướng trang đơn (single-page portfolio) có các section chiều dài không đồng đều, thuật toán offset đường đọc (reading-line scan) đáng tin cậy hơn nhiều so với `intersectionRatio` của IntersectionObserver.
+
+---
+
 ## 2026-09-21 — Sửa Font Tiếng Việt, Avatar Sói Nhìn Theo Chuột & Hiệu Ứng Scroll Reveal
 
 ### Changed

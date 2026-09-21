@@ -11,8 +11,8 @@
 ## 2. Tech Stack
 - **Frontend Framework:** Next.js 14.2 (App Router), React 18, TypeScript.
 - **Typography (Vietnamese-Ready):** Inter (`subsets: ["latin", "vietnamese"]`), Plus Jakarta Sans, Playfair Display, Be Vietnam Pro — hỗ trợ 100% tiếng Việt chuẩn hóa, không lỗi dấu.
-- **Styling & Effects:** Tailwind CSS (Morning Meadow: `meadow`, `sun`, `sky`, `earth`), `ScrollReveal.tsx` (IntersectionObserver GPU-accelerated).
-- **Icons & Visuals:** Lucide React, `InteractiveWolfAvatar.tsx` (real-time mouse gaze tracking & 3D head tilt), Canvas Particle System (`FloatingFoliage.tsx`), Three.js WebGL (`Wolf3DScene.tsx`).
+- **Styling & Effects:** Tailwind CSS (Morning Meadow: `meadow`, `sun`, `sky`, `earth`), `ScrollReveal.tsx` (IntersectionObserver GPU-accelerated), Reading-Line Scroll Tracking Navbar (`Navbar.tsx`).
+- **Icons & Visuals:** Lucide React, `InteractiveWolfAvatar.tsx` (real-time mouse gaze tracking & 3D head tilt), Canvas Particle System (`FloatingFoliage.tsx`), Three.js WebGL (`Wolf3DScene.tsx`), Dynamic Floating Rail Indicator (`#sun-amber` glow).
 - **Asset Processing:** 100% Transparent PNGs cho organic silhouettes (Wolf Runner, Soaring Eagle), Canvas floating foliage motes.
 - **Hosting & Domain:** Vercel / GitHub Pages (`tuns.id.vn`).
 
@@ -39,7 +39,7 @@ Tuans-s-Portfolio/
 │   │   ├── admin/                               # Trang quản trị nội bộ
 │   │   └── api/admin/                           # API routes quản trị và đồng bộ README
 │   ├── components/
-│   │   ├── navigation/                          # Navbar (Sticky), Footer
+│   │   ├── navigation/                          # Navbar (Sticky & Reading-Line Section Tracker), Footer
 │   │   ├── sections/
 │   │   │   ├── Hero.tsx                         # Hero section: Avatar, Bio, Career Objectives, Soaring Eagle
 │   │   │   ├── InteractiveWolfAvatar.tsx        # Avatar sói tương tác dõi mắt theo con chuột & nghiêng đầu 3D

@@ -227,6 +227,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
             <a
               key={`rail-${link.id}`}
               href={link.href}
+              onClick={() => setActiveSection(link.id)}
               className="group relative flex items-center justify-center w-7 h-7 rounded-full transition-all"
               aria-label={link.label}
             >
@@ -234,7 +235,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
               <span
                 className={`transition-all duration-300 rounded-full ${
                   isActive
-                    ? "w-3 h-3 bg-sun-amber ring-4 ring-sun-warm/25 shadow-sm"
+                    ? "w-3.5 h-3.5 bg-sun-amber ring-4 ring-sun-warm/35 shadow-md scale-110"
                     : "w-2 h-2 bg-stone-300 group-hover:bg-meadow-600 group-hover:scale-125"
                 }`}
               />
