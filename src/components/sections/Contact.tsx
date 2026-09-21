@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ContactInfo } from "@/types/portfolio";
-import { Mail, Phone, MapPin, Github, Copy, Check, Send, ArrowUpRight, Compass } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Copy, Check, ArrowUpRight } from "lucide-react";
 
 interface ContactProps {
   contact: ContactInfo;
@@ -19,22 +19,23 @@ export default function Contact({ contact, fullName }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 relative bg-steppe-950/90 border-t border-steppe-850 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-sun/5 blur-[140px] pointer-events-none" />
+    <section id="contact" className="py-20 lg:py-28 relative bg-gradient-to-b from-[#fbfcf9] to-meadow-50/80 border-t border-meadow-200/80 overflow-hidden">
+      {/* Background sunrise glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-sun-light/50 blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-steppe-900 border border-steppe-750 text-xs font-mono text-amber-sun uppercase tracking-wider mb-3">
-            <span>Section 06 • The Wolf&apos;s Rendezvous</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-meadow-200 text-xs font-mono text-meadow-800 uppercase tracking-wider mb-3 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-sun-amber" />
+            <span>Section 06 • Kết Nối & Hợp Tác</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-steppe-50 tracking-tight">
-            Kết Nối & Hợp Tác
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-stone-900 tracking-tight">
+            Liên Hệ Trực Tiếp
           </h2>
-          <p className="mt-3 text-base text-steppe-300 leading-relaxed font-sans">
-            Sẵn sàng thảo luận về các cơ hội phát triển sản phẩm web, kiến trúc backend Laravel và ứng dụng thời gian thực.
+          <p className="mt-3 text-base text-stone-600 leading-relaxed font-sans">
+            Sẵn sàng trao đổi về các cơ hội phát triển dự án web, kiến trúc backend Laravel và các giải pháp đám mây, AI.
           </p>
         </div>
 
@@ -42,20 +43,20 @@ export default function Contact({ contact, fullName }: ContactProps) {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
           
           {/* Email Direct */}
-          <div className="p-6 rounded-3xl bg-steppe-900/70 border border-steppe-800/80 hover:border-steppe-700 transition-all flex flex-col justify-between">
+          <div className="p-6 sm:p-7 rounded-3xl bg-white border border-meadow-200/90 hover:border-meadow-400 transition-all shadow-sm hover:shadow-lg hover:shadow-meadow-900/5 flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 rounded-xl bg-steppe-800 border border-steppe-700 flex items-center justify-center text-tech-emerald">
+              <div className="w-11 h-11 rounded-2xl bg-meadow-100 border border-meadow-200 flex items-center justify-center text-meadow-800">
                 <Mail className="w-5 h-5" />
               </div>
               <button
                 onClick={() => copyToClipboard(contact.email, "email")}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-steppe-300 hover:text-white bg-steppe-850 hover:bg-steppe-800 border border-steppe-750 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono text-stone-600 hover:text-stone-900 bg-meadow-50 hover:bg-meadow-100 border border-meadow-200 transition-colors shadow-sm"
                 title="Sao chép Email"
               >
                 {copiedField === "email" ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-tech-emerald" />
-                    <span>Đã chép</span>
+                    <Check className="w-3.5 h-3.5 text-meadow-600" />
+                    <span className="text-meadow-700 font-semibold">Đã chép</span>
                   </>
                 ) : (
                   <>
@@ -66,10 +67,10 @@ export default function Contact({ contact, fullName }: ContactProps) {
               </button>
             </div>
             <div className="mt-6">
-              <span className="text-xs font-mono uppercase tracking-wider text-steppe-400">Email Cá Nhân</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-stone-600">Email Cá Nhân</span>
               <a
                 href={`mailto:${contact.email}`}
-                className="block mt-1 text-lg font-mono font-semibold text-steppe-100 hover:text-amber-sun transition-colors"
+                className="block mt-1 text-lg font-mono font-bold text-stone-900 hover:text-meadow-800 transition-colors"
               >
                 {contact.email}
               </a>
@@ -77,20 +78,20 @@ export default function Contact({ contact, fullName }: ContactProps) {
           </div>
 
           {/* Phone Direct */}
-          <div className="p-6 rounded-3xl bg-steppe-900/70 border border-steppe-800/80 hover:border-steppe-700 transition-all flex flex-col justify-between">
+          <div className="p-6 sm:p-7 rounded-3xl bg-white border border-meadow-200/90 hover:border-meadow-400 transition-all shadow-sm hover:shadow-lg hover:shadow-meadow-900/5 flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <div className="w-10 h-10 rounded-xl bg-steppe-800 border border-steppe-700 flex items-center justify-center text-amber-sun">
+              <div className="w-11 h-11 rounded-2xl bg-sun-light border border-sun-amber/20 flex items-center justify-center text-sun-amber">
                 <Phone className="w-5 h-5" />
               </div>
               <button
                 onClick={() => copyToClipboard(contact.phone, "phone")}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-steppe-300 hover:text-white bg-steppe-850 hover:bg-steppe-800 border border-steppe-750 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono text-stone-600 hover:text-stone-900 bg-meadow-50 hover:bg-meadow-100 border border-meadow-200 transition-colors shadow-sm"
                 title="Sao chép Số điện thoại"
               >
                 {copiedField === "phone" ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-tech-emerald" />
-                    <span>Đã chép</span>
+                    <Check className="w-3.5 h-3.5 text-meadow-600" />
+                    <span className="text-meadow-700 font-semibold">Đã chép</span>
                   </>
                 ) : (
                   <>
@@ -101,10 +102,10 @@ export default function Contact({ contact, fullName }: ContactProps) {
               </button>
             </div>
             <div className="mt-6">
-              <span className="text-xs font-mono uppercase tracking-wider text-steppe-400">Số Điện Thoại</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-stone-600">Số Điện Thoại</span>
               <a
                 href={`tel:${contact.phone.replace(/\s+/g, "")}`}
-                className="block mt-1 text-lg font-mono font-semibold text-steppe-100 hover:text-amber-sun transition-colors"
+                className="block mt-1 text-lg font-mono font-bold text-stone-900 hover:text-meadow-800 transition-colors"
               >
                 {contact.phone}
               </a>
@@ -112,27 +113,27 @@ export default function Contact({ contact, fullName }: ContactProps) {
           </div>
 
           {/* Location Info */}
-          <div className="p-6 rounded-3xl bg-steppe-900/70 border border-steppe-800/80 flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl bg-steppe-800 border border-steppe-700 flex items-center justify-center text-steppe-300 flex-shrink-0">
+          <div className="p-6 rounded-3xl bg-white border border-meadow-200/90 flex items-center gap-4 shadow-sm">
+            <div className="w-11 h-11 rounded-2xl bg-meadow-100 border border-meadow-200 flex items-center justify-center text-meadow-800 flex-shrink-0">
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-steppe-400">Địa Điểm Sinh Sống</span>
-              <p className="text-base font-semibold text-steppe-100 mt-0.5">
+              <span className="text-xs font-mono uppercase tracking-wider text-stone-600">Địa Điểm Sinh Sống</span>
+              <p className="text-base font-bold text-stone-900 mt-0.5">
                 {contact.location}
               </p>
             </div>
           </div>
 
           {/* GitHub Repository Profile */}
-          <div className="p-6 rounded-3xl bg-steppe-900/70 border border-steppe-800/80 hover:border-steppe-700 transition-all flex items-center justify-between gap-4">
+          <div className="p-6 rounded-3xl bg-white border border-meadow-200/90 hover:border-meadow-400 transition-all flex items-center justify-between gap-4 shadow-sm">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-steppe-800 border border-steppe-700 flex items-center justify-center text-steppe-200 flex-shrink-0">
+              <div className="w-11 h-11 rounded-2xl bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-800 flex-shrink-0">
                 <Github className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-mono uppercase tracking-wider text-steppe-400">Mã Nguồn Mở</span>
-                <p className="text-base font-mono font-semibold text-steppe-100 mt-0.5">
+                <span className="text-xs font-mono uppercase tracking-wider text-stone-600">Mã Nguồn Mở</span>
+                <p className="text-base font-mono font-bold text-stone-900 mt-0.5">
                   @{contact.githubUsername}
                 </p>
               </div>
@@ -141,7 +142,7 @@ export default function Contact({ contact, fullName }: ContactProps) {
               href={contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono text-steppe-200 bg-steppe-850 hover:bg-steppe-800 border border-steppe-750 transition-colors"
+              className="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-mono text-meadow-900 bg-meadow-50 hover:bg-meadow-100 border border-meadow-200 transition-colors font-medium"
             >
               <span>Ghé thăm</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -3,46 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #060a08;
-  --foreground: #f3f8f5;
+  --background: #fbfcf9;
+  --foreground: #1c1917;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: #060a08;
-  color: #f3f8f5;
+  background-color: #fbfcf9;
+  color: #1c1917;
   font-family: var(--font-sans, system-ui, sans-serif);
   overflow-x: hidden;
-  selection-background-color: #c89a3c;
-  selection-color: #060a08;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(224, 242, 254, 0.45), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(254, 243, 199, 0.4), transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(220, 252, 231, 0.35), transparent 50%);
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: #c89a3c;
-  color: #060a08;
+  background: #3d7843;
+  color: #ffffff;
 }
 
-/* Custom Steppe Scrollbar */
+/* Custom Natural Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #060a08;
+  background: #f4f8f4;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e372b;
+  background: #a5cfa8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2d4e3d;
+  background: #74b379;
 }
 
 /* Modal fade-in animation */
@@ -59,4 +62,23 @@ body {
 
 .animate-fadeIn {
   animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism utility for morning meadow */
+.glass-morning {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 240, 230, 0.9);
+}
+
+.card-meadow {
+  background: #ffffff;
+  border: 1px solid #e5f0e6;
+  box-shadow: 0 10px 25px -5px rgba(36, 64, 40, 0.04), 0 8px 10px -6px rgba(36, 64, 40, 0.02);
+}
+
+.card-meadow:hover {
+  border-color: #cce2cd;
+  box-shadow: 0 15px 30px -5px rgba(36, 64, 40, 0.08), 0 10px 15px -5px rgba(36, 64, 40, 0.04);
 }

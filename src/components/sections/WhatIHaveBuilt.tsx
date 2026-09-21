@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { SkillContributionMapping } from "@/types/portfolio";
-import { ArrowRight, CheckCircle2, Filter, Layers, Server, Layout, Database, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle2, Layers, Server, Layout, Database, Cpu } from "lucide-react";
 
 interface WhatIHaveBuiltProps {
   mappings: SkillContributionMapping[];
@@ -26,25 +26,26 @@ export default function WhatIHaveBuilt({ mappings }: WhatIHaveBuiltProps) {
       : mappings.filter(m => m.category === selectedCategory);
 
   return (
-    <section id="what-i-built" className="py-20 lg:py-28 relative bg-steppe-950/60 border-t border-steppe-850">
+    <section id="what-i-built" className="py-20 lg:py-28 relative bg-[#f8faf7] border-t border-meadow-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-steppe-900 border border-steppe-750 text-xs font-mono text-amber-sun uppercase tracking-wider mb-3">
-              <span>Section 02 • Proof of Work</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-meadow-200 text-xs font-mono text-meadow-800 uppercase tracking-wider mb-3 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-sun-amber" />
+              <span>Section 02 • Cột Mốc Kiến Tạo Thực Tế</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-steppe-50 tracking-tight">
-              Kỹ Năng Đã Chuyển Thành Sản Phẩm Gì?
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-stone-900 tracking-tight">
+              Kỹ Năng Đã Chuyển Hóa Thành Sản Phẩm Gì?
             </h2>
-            <p className="mt-3 text-base text-steppe-300 leading-relaxed">
-              Không chỉ là danh sách lý thuyết. Đây là mối liên hệ thực tế giữa <strong>Kỹ năng</strong> ➔ <strong>Dự án triển khai</strong> ➔ <strong>Những phần tôi trực tiếp viết mã</strong> trong CV.
+            <p className="mt-3 text-base text-stone-600 leading-relaxed font-sans">
+              Mỗi kỹ năng đều đi kèm với sản phẩm và <strong>đóng góp mã nguồn cụ thể</strong> tôi trực tiếp thực hiện trong CV, minh chứng rõ ràng cho năng lực thực tế.
             </p>
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-steppe-900/90 border border-steppe-800 self-start md:self-auto overflow-x-auto max-w-full">
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-white border border-meadow-200 shadow-sm self-start md:self-auto overflow-x-auto max-w-full">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = selectedCategory === cat.id;
@@ -52,10 +53,10 @@ export default function WhatIHaveBuilt({ mappings }: WhatIHaveBuiltProps) {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+                  className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all ${
                     isActive
-                      ? "bg-steppe-800 text-amber-sun font-semibold shadow-sm border border-steppe-700"
-                      : "text-steppe-400 hover:text-steppe-200 hover:bg-steppe-850/60"
+                      ? "bg-meadow-800 text-white font-semibold shadow-sm"
+                      : "text-stone-600 hover:text-stone-900 hover:bg-meadow-50"
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -71,36 +72,36 @@ export default function WhatIHaveBuilt({ mappings }: WhatIHaveBuiltProps) {
           {filteredMappings.map((item, idx) => (
             <div
               key={item.id}
-              className="group relative p-6 rounded-2xl bg-steppe-900/60 hover:bg-steppe-900 border border-steppe-800/80 hover:border-steppe-700 transition-all duration-300 shadow-sm flex flex-col justify-between"
+              className="group relative p-6 sm:p-7 rounded-3xl bg-white hover:bg-white border border-meadow-200/90 hover:border-meadow-400 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-meadow-900/5 flex flex-col justify-between"
             >
               <div>
                 {/* Top Flow: Skill -> Project */}
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-steppe-800 text-steppe-100 border border-steppe-700">
+                  <span className="px-3 py-1 rounded-xl text-xs font-mono font-semibold bg-meadow-50 text-meadow-900 border border-meadow-200">
                     {item.skill}
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5 text-steppe-500" />
-                  <span className="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-amber-sun/10 text-amber-sun border border-amber-sun/20">
+                  <ArrowRight className="w-3.5 h-3.5 text-stone-600" />
+                  <span className="px-3 py-1 rounded-xl text-xs font-mono font-medium bg-sun-light text-sun-amber border border-sun-amber/20">
                     {item.project}
                   </span>
-                  <span className="ml-auto text-[11px] font-mono text-steppe-400">
+                  <span className="ml-auto text-xs font-mono text-stone-600">
                     #{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                   </span>
                 </div>
 
                 {/* Direct Verifiable Contribution */}
                 <div className="flex items-start gap-3 mt-3">
-                  <CheckCircle2 className="w-4 h-4 text-tech-emerald mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-steppe-200 leading-relaxed font-sans">
+                  <CheckCircle2 className="w-4 h-4 text-meadow-600 mt-1 flex-shrink-0" />
+                  <p className="text-sm text-stone-800 leading-relaxed font-sans font-normal">
                     {item.contribution}
                   </p>
                 </div>
               </div>
 
               {/* Bottom Subtle Tag */}
-              <div className="mt-5 pt-3 border-t border-steppe-850 flex items-center justify-between text-[11px] font-mono text-steppe-400">
-                <span>Phân loại: {item.category}</span>
-                <span className="text-tech-emerald">Đã kiểm chứng CV</span>
+              <div className="mt-5 pt-3 border-t border-meadow-100 flex items-center justify-between text-[11px] font-mono text-stone-600">
+                <span>Phân loại: <strong className="text-stone-700">{item.category}</strong></span>
+                <span className="text-meadow-700 font-semibold">✓ Đã kiểm chứng CV</span>
               </div>
             </div>
           ))}

@@ -14,7 +14,10 @@ async function runTests() {
   assert(homeHtml.includes("WHAT I ACTUALLY BUILT") || homeHtml.includes("Trực tiếp viết mã"), "Must show what candidate directly built");
   assert(!homeHtml.includes('href="/admin"'), "Security violation: /admin found in public HTML");
   assert(!homeHtml.includes('href="/admin/'), "Security violation: /admin/ found in public HTML");
-  console.log("✅ Homepage passed all criteria, ZERO admin links exposed on public site.");
+  assert(homeHtml.includes("The Wolf Run"), "Must include The Wolf Run scroll animation section");
+  assert(!homeHtml.includes("3D Wolf • Interactive View"), "Old 3D dog canvas must be completely removed");
+  assert(!homeHtml.includes("3D Wolf • The Wolf's Journey"), "Old 3D dog badge must be completely removed");
+  console.log("✅ Homepage passed all criteria: Morning Meadow active, The Wolf Run verified, ZERO old 3D dog, ZERO admin links exposed.");
 
   console.log("--- TEST 2: Robots.txt ---");
   const robotsRes = await fetch("http://localhost:3000/robots.txt");

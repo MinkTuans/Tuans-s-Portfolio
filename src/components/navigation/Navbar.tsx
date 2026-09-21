@@ -15,7 +15,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 25);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -23,6 +23,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
 
   const navLinks = [
     { label: "Bắt Đầu", href: "#hero" },
+    { label: "Hành Trình Sói", href: "#wolf-journey" },
     { label: "Đã Xây Dựng", href: "#what-i-built" },
     { label: "Dự Án", href: "#projects" },
     { label: "Kinh Nghiệm", href: "#experience" },
@@ -34,7 +35,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-steppe-950/85 backdrop-blur-md border-b border-steppe-800/80 py-3 shadow-lg shadow-black/20"
+          ? "bg-white/90 backdrop-blur-md border-b border-meadow-200/80 py-3 shadow-sm"
           : "bg-transparent py-5"
       }`}
     >
@@ -43,28 +44,28 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
           {/* Brand Identity */}
           <Link
             href="#hero"
-            className="group flex items-center gap-2.5 text-steppe-100 hover:text-white transition-colors"
+            className="group flex items-center gap-2.5 text-stone-900 transition-colors"
           >
-            <div className="w-8 h-8 rounded-lg bg-steppe-800 border border-steppe-700 flex items-center justify-center text-amber-sun group-hover:border-amber-sun/50 transition-colors shadow-sm">
+            <div className="w-8 h-8 rounded-xl bg-meadow-100 border border-meadow-200 flex items-center justify-center text-meadow-800 group-hover:bg-meadow-800 group-hover:text-white transition-all shadow-sm">
               <Compass className="w-4 h-4 group-hover:rotate-45 transition-transform duration-500" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-semibold text-sm tracking-wide text-steppe-100 group-hover:text-amber-sun transition-colors">
+              <span className="font-display font-semibold text-sm tracking-wide text-stone-900 group-hover:text-meadow-800 transition-colors">
                 {fullName}
               </span>
-              <span className="text-[10px] font-mono tracking-widest text-steppe-400 uppercase">
+              <span className="text-[10px] font-mono tracking-widest text-stone-600 uppercase">
                 The Wolf&apos;s Journey
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-steppe-900/60 border border-steppe-800/60 backdrop-blur-sm">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5 px-3 py-1.5 rounded-full bg-white/80 border border-meadow-200 shadow-sm backdrop-blur-sm">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3.5 py-1.5 rounded-full text-xs font-medium text-steppe-300 hover:text-steppe-100 hover:bg-steppe-800/60 transition-all"
+                className="px-3 py-1 rounded-full text-xs font-medium text-stone-600 hover:text-stone-950 hover:bg-meadow-100/70 transition-all"
               >
                 {link.label}
               </a>
@@ -72,20 +73,20 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
             <a
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium text-steppe-200 bg-steppe-900/80 hover:bg-steppe-800 border border-steppe-700/60 hover:border-steppe-600 transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium text-stone-700 bg-white hover:bg-meadow-50 border border-meadow-200 hover:border-meadow-300 transition-all shadow-sm"
             >
-              <Code2 className="w-3.5 h-3.5 text-tech-emerald" />
+              <Code2 className="w-3.5 h-3.5 text-meadow-700" />
               <span>GitHub</span>
-              <ArrowUpRight className="w-3 h-3 text-steppe-400" />
+              <ArrowUpRight className="w-3 h-3 text-stone-600" />
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium text-steppe-950 bg-amber-sun hover:bg-amber-warm shadow-md shadow-amber-sun/10 transition-all font-sans"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl text-xs font-medium text-white bg-meadow-800 hover:bg-meadow-900 shadow-sm transition-all font-sans font-semibold"
             >
               <span>Xem Dự Án</span>
             </a>
@@ -94,7 +95,7 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-steppe-300 hover:text-white bg-steppe-900 border border-steppe-800"
+            className="md:hidden p-2 rounded-xl text-stone-700 hover:text-stone-950 bg-white border border-meadow-200 shadow-sm"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -103,23 +104,23 @@ export default function Navbar({ fullName, githubUrl }: NavbarProps) {
 
         {/* Mobile Navigation Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 rounded-2xl bg-steppe-900/95 border border-steppe-800 backdrop-blur-xl shadow-2xl flex flex-col gap-2">
+          <div className="md:hidden mt-3 p-4 rounded-2xl bg-white border border-meadow-200 shadow-xl flex flex-col gap-1.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 rounded-xl text-sm font-medium text-steppe-200 hover:bg-steppe-800 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-stone-700 hover:bg-meadow-100/60 transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <div className="pt-2 mt-2 border-t border-steppe-800/80 flex flex-col gap-2">
+            <div className="pt-2 mt-2 border-t border-meadow-100 flex flex-col gap-2">
               <a
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-mono text-steppe-200 bg-steppe-850 border border-steppe-750"
+                className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-mono text-stone-800 bg-meadow-50 border border-meadow-200"
               >
                 <span>GitHub Profile</span>
                 <ArrowUpRight className="w-4 h-4" />

@@ -10,34 +10,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        steppe: {
-          950: "#060a08",
-          900: "#0a130e",
-          850: "#0f1c15",
-          800: "#14251c",
-          700: "#1e372b",
-          600: "#2d4e3d",
-          500: "#457059",
-          400: "#69987d",
-          300: "#98bfa9",
-          200: "#c7ded2",
-          100: "#e6f0ea",
-          50: "#f3f8f5",
+        meadow: {
+          50: "#f4f8f4",
+          100: "#e5f0e6",
+          200: "#cce2cd",
+          300: "#a5cfa8",
+          400: "#74b379",
+          500: "#4f9556",
+          600: "#3d7843",
+          700: "#326038",
+          800: "#2a4c2e",
+          900: "#244028",
+          950: "#102313",
         },
-        amber: {
-          sun: "#c89a3c",
-          warm: "#e5b452",
-          glow: "rgba(200, 154, 60, 0.15)",
+        sky: {
+          morning: "#f0f8ff",
+          soft: "#e0f2fe",
+          breeze: "#bae6fd",
+        },
+        sun: {
+          warm: "#f59e0b",
+          amber: "#d97706",
+          light: "#fef3c7",
+          glow: "#fffbeb",
+        },
+        olive: {
+          50: "#f7fee7",
+          500: "#84cc16",
+          700: "#4d7c0f",
+          900: "#365314",
         },
         earth: {
-          sand: "#b89e78",
-          bark: "#4a3b2c",
-          soil: "#251d16",
-        },
-        tech: {
-          emerald: "#10b981",
-          mint: "#34d399",
-          glow: "rgba(16, 185, 129, 0.15)",
+          sand: "#e7dec8",
+          warm: "#854d0e",
+          soil: "#451a03",
+          stone: "#1c1917",
         },
       },
       fontFamily: {
@@ -46,18 +53,22 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float-gentle": "floatGentle 6s ease-in-out infinite",
-        "shimmer": "shimmer 2.5s ease-in-out infinite",
+        "drift-slow": "drift 18s ease-in-out infinite alternate",
+        "sway-grass": "sway 4s ease-in-out infinite alternate",
+        "sun-pulse": "sunPulse 6s ease-in-out infinite",
       },
       keyframes: {
-        floatGentle: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-6px)" },
+        drift: {
+          "0%": { transform: "translateX(0px)" },
+          "100%": { transform: "translateX(25px)" },
         },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
+        sway: {
+          "0%": { transform: "rotate(-1.5deg)" },
+          "100%": { transform: "rotate(1.5deg)" },
+        },
+        sunPulse: {
+          "0%, 100%": { opacity: "0.85", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.05)" },
         },
       },
     },

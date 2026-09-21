@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#060a08",
+  themeColor: "#fbfcf9",
   width: "device-width",
   initialScale: 1,
 };
@@ -76,8 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} ${cinzel.variable} dark`}>
-      <body className="bg-steppe-950 text-steppe-50 min-h-screen antialiased selection:bg-amber-sun selection:text-steppe-950">
+    <html lang="vi" className={`${inter.variable} ${cinzel.variable}`}>
+      <body className="bg-[#fbfcf9] text-stone-900 min-h-screen antialiased selection:bg-meadow-800 selection:text-white">
         {children}
       </body>
     </html>
