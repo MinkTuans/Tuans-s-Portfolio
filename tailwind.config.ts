@@ -79,9 +79,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],
-        display: ["var(--font-cinzel)", "var(--font-hand)", "Georgia", "serif"],
-        hand: ["var(--font-hand)", "cursive", "sans-serif"],
+        sans: ["var(--font-inter)", "Plus Jakarta Sans", "Be Vietnam Pro", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Plus Jakarta Sans", "Playfair Display", "Be Vietnam Pro", "var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       animation: {

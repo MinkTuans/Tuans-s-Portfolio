@@ -19,6 +19,8 @@ import {
   Calendar,
 } from "lucide-react";
 import { ProfileInfo } from "@/types/portfolio";
+import InteractiveWolfAvatar from "./InteractiveWolfAvatar";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface HeroProps {
   profile: ProfileInfo;
@@ -198,75 +200,70 @@ export default function Hero({ profile }: HeroProps) {
 
           {/* Right Column: Visual Profile Card & Key Credentials */}
           <div className="lg:col-span-4 w-full">
-            <div className="relative rounded-3xl p-6 sm:p-7 bg-white/95 backdrop-blur-md border border-meadow-200 shadow-xl shadow-meadow-900/5 overflow-hidden flex flex-col justify-between min-h-[440px]">
-              
-              {/* Card Header */}
-              <div className="flex items-center justify-between gap-2 pb-4 border-b border-meadow-100">
-                <div className="flex items-center gap-2 text-xs font-mono text-meadow-800 font-semibold uppercase tracking-wider">
-                  <span className="w-2.5 h-2.5 rounded-full bg-sun-amber" />
-                  <span>The Wolf&apos;s Spirit</span>
-                </div>
-                <span className="text-[11px] font-mono text-meadow-700 bg-meadow-100 px-2.5 py-0.5 rounded-full font-semibold">
-                  Morning Meadow
-                </span>
-              </div>
-
-              {/* Central Visual Meadow & Wolf Emblem */}
-              <div className="my-5 flex flex-col items-center text-center">
-                <div className="relative w-24 h-24 rounded-2xl bg-gradient-to-b from-sky-soft to-meadow-100 flex items-center justify-center border border-meadow-200 shadow-inner mb-3">
-                  <svg className="w-14 h-14 text-meadow-800" viewBox="0 0 100 100" fill="currentColor">
-                    <polygon points="50,12 63,35 80,32 70,50 84,70 66,72 50,94 34,72 16,70 30,50 20,32 37,35" opacity="0.95" />
-                    <polygon points="50,22 58,38 66,50 50,72 34,50 42,38" fill="#f59e0b" />
-                    <circle cx="43" cy="44" r="2.5" fill="#ffffff" />
-                    <circle cx="57" cy="44" r="2.5" fill="#ffffff" />
-                  </svg>
-                </div>
-
-                <h3 className="text-lg font-display font-bold text-stone-900">
-                  Hành Trình Bền Bỉ
-                </h3>
-                <p className="mt-1.5 text-xs text-stone-600 leading-relaxed max-w-xs font-sans">
-                  Tượng trưng cho bản lĩnh độc lập, nhạy bén và năng lực tự kiến tạo sản phẩm từ gốc rễ.
-                </p>
-              </div>
-
-              {/* Key Credentials Highlights */}
-              <div className="pt-4 border-t border-meadow-100 space-y-2.5 text-xs font-mono text-stone-700">
-                <div className="flex items-center justify-between p-2 rounded-xl bg-meadow-50/50">
-                  <span className="flex items-center gap-1.5 text-stone-600">
-                    <GraduationCap className="w-3.5 h-3.5 text-meadow-700" />
-                    Học vấn:
+            <ScrollReveal direction="up" delay={150} className="w-full">
+              <div className="relative rounded-3xl p-6 sm:p-7 bg-white/95 backdrop-blur-md border border-meadow-200 shadow-xl shadow-meadow-900/5 overflow-hidden flex flex-col justify-between min-h-[440px]">
+                
+                {/* Card Header */}
+                <div className="flex items-center justify-between gap-2 pb-4 border-b border-meadow-100">
+                  <div className="flex items-center gap-2 text-xs font-mono text-meadow-800 font-semibold uppercase tracking-wider">
+                    <span className="w-2.5 h-2.5 rounded-full bg-sun-amber" />
+                    <span>The Wolf&apos;s Spirit</span>
+                  </div>
+                  <span className="text-[11px] font-mono text-meadow-700 bg-meadow-100 px-2.5 py-0.5 rounded-full font-semibold">
+                    Morning Meadow
                   </span>
-                  <span className="font-semibold text-meadow-900">FPT Poly (GPA 7.7/10)</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2 rounded-xl bg-meadow-50/50">
-                  <span className="flex items-center gap-1.5 text-stone-600">
-                    <Briefcase className="w-3.5 h-3.5 text-meadow-700" />
-                    Thực tập:
+                {/* Central Interactive Wolf Avatar (Tracks mouse gaze & tilts) */}
+                <div className="my-5 flex flex-col items-center text-center">
+                  <InteractiveWolfAvatar />
+
+                  <h3 className="text-lg font-display font-bold text-stone-900">
+                    Hành Trình Bền Bỉ
+                  </h3>
+                  <p className="mt-1.5 text-xs text-stone-600 leading-relaxed max-w-xs font-sans">
+                    Tượng trưng cho bản lĩnh độc lập, nhạy bén và năng lực tự kiến tạo sản phẩm từ gốc rễ.
+                  </p>
+                </div>
+
+                {/* Key Credentials Highlights */}
+                <div className="pt-4 border-t border-meadow-100 space-y-2.5 text-xs font-mono text-stone-700">
+                  <div className="flex items-center justify-between p-2 rounded-xl bg-meadow-50/50">
+                    <span className="flex items-center gap-1.5 text-stone-600">
+                      <GraduationCap className="w-3.5 h-3.5 text-meadow-700" />
+                      Học vấn:
+                    </span>
+                    <span className="font-semibold text-meadow-900">FPT Poly (GPA 7.7/10)</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2 rounded-xl bg-meadow-50/50">
+                    <span className="flex items-center gap-1.5 text-stone-600">
+                      <Briefcase className="w-3.5 h-3.5 text-meadow-700" />
+                      Thực tập:
+                    </span>
+                    <span className="font-semibold text-meadow-900">Ngọc Phi Thúy Jade</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2 rounded-xl bg-meadow-50/50">
+                    <span className="flex items-center gap-1.5 text-stone-600">
+                      <Layers className="w-3.5 h-3.5 text-sun-amber" />
+                      Dự án tiêu biểu:
+                    </span>
+                    <span className="font-semibold text-sun-amber">MindNova AI, Cook, Tour</span>
+                  </div>
+                </div>
+
+                {/* Bottom Availability Status */}
+                <div className="mt-4 pt-3 border-t border-meadow-100 flex items-center justify-between text-[11px] font-mono">
+                  <span className="flex items-center gap-1.5 text-meadow-800 font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                    Sẵn sàng gia nhập
                   </span>
-                  <span className="font-semibold text-meadow-900">Ngọc Phi Thúy Jade</span>
+                  <span className="text-stone-500">Frontend Intern</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2 rounded-xl bg-meadow-50/50">
-                  <span className="flex items-center gap-1.5 text-stone-600">
-                    <Layers className="w-3.5 h-3.5 text-sun-amber" />
-                    Dự án tiêu biểu:
-                  </span>
-                  <span className="font-semibold text-sun-amber">MindNova AI, Cook, Tour</span>
-                </div>
               </div>
-
-              {/* Bottom Availability Status */}
-              <div className="mt-4 pt-3 border-t border-meadow-100 flex items-center justify-between text-[11px] font-mono">
-                <span className="flex items-center gap-1.5 text-meadow-800 font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                  Sẵn sàng gia nhập
-                </span>
-                <span className="text-stone-500">Frontend Intern</span>
-              </div>
-
-            </div>
+            </ScrollReveal>
           </div>
 
         </div>

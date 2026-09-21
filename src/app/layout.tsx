@@ -1,24 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cinzel, Merienda } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin", "vietnamese"],
   variable: "--font-inter",
   display: "swap",
-});
-
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  variable: "--font-cinzel",
-  display: "swap",
-});
-
-const handFont = Merienda({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-hand",
-  display: "swap",
-  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -84,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} ${cinzel.variable} ${handFont.variable}`}>
+    <html lang="vi" className={inter.variable}>
       <body className="bg-[#fbfcf9] text-stone-900 min-h-screen antialiased selection:bg-meadow-800 selection:text-white">
         {children}
       </body>

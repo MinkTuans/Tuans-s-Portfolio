@@ -10,9 +10,10 @@
 
 ## 2. Tech Stack
 - **Frontend Framework:** Next.js 14.2 (App Router), React 18, TypeScript.
-- **Styling:** Tailwind CSS, custom palettes (Morning Meadow: `meadow`, `sun`, `sky`, `earth`; Deep Forest: `forest`, `twilight`).
-- **Icons & Visuals:** Lucide React, Canvas Particle System (`FloatingFoliage.tsx`), Three.js WebGL (`Wolf3DScene.tsx`).
-- **Asset Processing:** 100% Transparent PNGs for organic silhouettes (Wolf Runner, Soaring Eagle), Canvas floating foliage motes.
+- **Typography (Vietnamese-Ready):** Inter (`subsets: ["latin", "vietnamese"]`), Plus Jakarta Sans, Playfair Display, Be Vietnam Pro — hỗ trợ 100% tiếng Việt chuẩn hóa, không lỗi dấu.
+- **Styling & Effects:** Tailwind CSS (Morning Meadow: `meadow`, `sun`, `sky`, `earth`), `ScrollReveal.tsx` (IntersectionObserver GPU-accelerated).
+- **Icons & Visuals:** Lucide React, `InteractiveWolfAvatar.tsx` (real-time mouse gaze tracking & 3D head tilt), Canvas Particle System (`FloatingFoliage.tsx`), Three.js WebGL (`Wolf3DScene.tsx`).
+- **Asset Processing:** 100% Transparent PNGs cho organic silhouettes (Wolf Runner, Soaring Eagle), Canvas floating foliage motes.
 - **Hosting & Domain:** Vercel / GitHub Pages (`tuns.id.vn`).
 
 ---
@@ -41,12 +42,15 @@ Tuans-s-Portfolio/
 │   │   ├── navigation/                          # Navbar (Sticky), Footer
 │   │   ├── sections/
 │   │   │   ├── Hero.tsx                         # Hero section: Avatar, Bio, Career Objectives, Soaring Eagle
+│   │   │   ├── InteractiveWolfAvatar.tsx        # Avatar sói tương tác dõi mắt theo con chuột & nghiêng đầu 3D
 │   │   │   ├── TheWolfRun.tsx                   # Hoạt cảnh sói chạy cuộn trang & 3 mốc sự nghiệp
 │   │   │   ├── WhatIHaveBuilt.tsx               # Ma trận kỹ năng -> dự án -> đóng góp thực tế
 │   │   │   ├── Projects.tsx                     # Case studies chi tiết: MindNova AI, Cook, Tour
 │   │   │   ├── Experience.tsx                   # Kinh nghiệm doanh nghiệp & Học vấn FPT Poly GPA 7.7
 │   │   │   ├── Skills.tsx                       # Hệ sinh thái kỹ năng phân loại
 │   │   │   └── Contact.tsx                      # Kênh liên hệ xác thực
+│   │   ├── ui/
+│   │   │   └── ScrollReveal.tsx                 # Scroll-driven reveal component tối ưu IntersectionObserver
 │   │   ├── forest/
 │   │   │   └── FloatingFoliage.tsx              # Canvas lá rơi và đốm nắng vàng trong suốt
 │   │   └── 3d/

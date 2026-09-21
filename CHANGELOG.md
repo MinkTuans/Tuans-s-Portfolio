@@ -4,6 +4,46 @@ Lịch sử thay đổi và cập nhật tính năng của dự án **Tuấn's P
 
 ---
 
+## 2026-09-21 — Sửa Font Tiếng Việt, Avatar Sói Nhìn Theo Chuột & Hiệu Ứng Scroll Reveal
+
+### Changed
+- **Sửa font chữ tiếng Việt toàn diện:**
+  - Thay thế font `Cinzel` (vốn không hỗ trợ dấu tiếng Việt dẫn đến lỗi chữ "Ậ" trong "PHẠM MINH TUẤN" và các chữ có dấu trong "HÀNH TRÌNH BỀN BỈ") bằng font stack chuẩn hỗ trợ 100% tiếng Việt: `Plus Jakarta Sans`, `Playfair Display`, `Be Vietnam Pro`, `Inter`.
+  - Cập nhật `tailwind.config.ts`, `globals.css` và `layout.tsx` với font stack tiếng Việt tối ưu, không phát sinh lỗi tải font mạng ngoại tuyến (`ENOTFOUND`).
+- **Avatar sói nhìn theo con chuột (`InteractiveWolfAvatar.tsx`):**
+  - Thay thế biểu tượng ngôi sao tĩnh bên trên tiêu đề "HÀNH TRÌNH BỀN BỈ" bằng một linh vật avatar sói tương tác thông minh.
+  - Con ngươi và tròng mắt của sói tính toán góc và khoảng cách để **liếc nhìn theo con trỏ chuột** của người dùng khắp màn hình theo thời gian thực.
+  - Đầu sói nghiêng 3D nhẹ (`perspective` + `rotateX`/`rotateY`) theo hướng chuột; có hoạt ảnh chớp mắt tự nhiên mỗi 4.5 giây và vểnh tai khi hover.
+- **Các thành phần xuất hiện từ từ theo scroll (`ScrollReveal.tsx`):**
+  - Tạo component `ScrollReveal` sử dụng `IntersectionObserver` tối ưu GPU.
+  - Áp dụng hiệu ứng cuộn mượt mà (fade in + trượt lên `translate3d`) cho toàn bộ các section trên `page.tsx` và các thẻ card trong `Hero.tsx`.
+
+### Files / Modules
+- `src/components/sections/InteractiveWolfAvatar.tsx` [NEW]
+- `src/components/ui/ScrollReveal.tsx` [NEW]
+- `src/components/sections/Hero.tsx`
+- `src/app/page.tsx`
+- `src/app/layout.tsx`
+- `src/app/globals.css`
+- `tailwind.config.ts`
+- `CHANGELOG.md`
+- `project_knowledge_base.md`
+
+### Reason
+- Đáp ứng trực tiếp yêu cầu của người dùng: sửa lỗi font tiếng Việt hiển thị thiếu dấu, biến ô trên "Hành Trình Bền BỈ" thành avatar sói nhìn theo con chuột, và cho các thành phần xuất hiện từ từ theo scroll.
+
+### Verification
+- Chạy `npm run build`:
+  - `✓ Compiled successfully`
+  - `✓ Generating static pages (10/10)`
+  - 0 lỗi lint, 0 lỗi TypeScript, kích thước route `/` chỉ 31.8 kB.
+- Kiểm tra tính toán tọa độ mắt sói và head tilt 3D mượt mà không gây giật lag.
+
+### Notes
+- Tất cả font trong `display` và `sans` đều phải có glyphs tiếng Việt chính quy để tránh tình trạng chữ có dấu bị rớt về font fallback hệ thống.
+
+---
+
 ## 2026-09-21 — Khôi Phục Hồ Sơ CV Thực Tế & Loại Bỏ Nền Hộp Lá Cây, Chim, Sói
 
 ### Changed

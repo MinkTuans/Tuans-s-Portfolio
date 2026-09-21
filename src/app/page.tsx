@@ -12,6 +12,8 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/navigation/Footer";
 import FloatingFoliage from "@/components/forest/FloatingFoliage";
 
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 export const revalidate = 60; // ISR revalidate every 60 seconds
 
 export default async function HomePage() {
@@ -31,28 +33,40 @@ export default async function HomePage() {
         githubUrl={data.profile.contact.github}
       />
 
-      {/* 3. Main The Wolf's Journey Portfolio Content */}
+      {/* 3. Main The Wolf's Journey Portfolio Content with Scroll-Driven Revelations */}
       <main className="flex-grow relative z-10">
-        {/* 01. Hero Section (Morning Meadow, Verified CV Bio, Soaring Eagle Silhouette, Career Objectives) */}
+        {/* 01. Hero Section */}
         <Hero profile={data.profile} />
 
-        {/* 02. The Wolf Run (Scroll-Driven Running Wolf Across Grassland, 100% Transparent Silhouette, Career Milestones) */}
-        <TheWolfRun />
+        {/* 02. The Wolf Run (Scroll-Driven Running Wolf Across Grassland) */}
+        <ScrollReveal direction="up" distance={40} threshold={0.05}>
+          <TheWolfRun />
+        </ScrollReveal>
 
         {/* 03. What I Have Built (Skill -> Project -> Contribution Matrix) */}
-        <WhatIHaveBuilt mappings={data.skillContributions} />
+        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+          <WhatIHaveBuilt mappings={data.skillContributions} />
+        </ScrollReveal>
 
         {/* 04. Projects Showcase with Case Studies & Auto-synced GitHub Repos */}
-        <Projects projects={data.projects} gitHubRepos={gitHubRepos} />
+        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+          <Projects projects={data.projects} gitHubRepos={gitHubRepos} />
+        </ScrollReveal>
 
-        {/* 05. Experience & Education Milestones (Ngọc Phi Thúy Jade & FPT Polytechnic College GPA 7.7/10) */}
-        <Experience experience={data.experience} education={data.education} />
+        {/* 05. Experience & Education Milestones */}
+        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+          <Experience experience={data.experience} education={data.education} />
+        </ScrollReveal>
 
         {/* 06. Categorized Skill Ecosystem */}
-        <Skills categories={data.skillCategories} />
+        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+          <Skills categories={data.skillCategories} />
+        </ScrollReveal>
 
         {/* 07. Verified Direct Contact Channels */}
-        <Contact contact={data.profile.contact} fullName={data.profile.fullName} />
+        <ScrollReveal direction="up" distance={40} threshold={0.08}>
+          <Contact contact={data.profile.contact} fullName={data.profile.fullName} />
+        </ScrollReveal>
       </main>
 
       {/* 4. Public Footer */}
